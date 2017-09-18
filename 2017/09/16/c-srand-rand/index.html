@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="C语言,技术," />
 
 
 
@@ -95,17 +95,18 @@
 
 
 
-<meta name="description" content="随机函数srand()和rand()的使用 在VC++中没有random()和randomize()函数，只有rand()和srand()函数。 这两个函数都包含在头文件中。 srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机数的发生器，而srand()是用来给rand()提供随机变量（也称之为种子）。 如果不通过srand()向rand()提供不同的种子，那么ran">
+<meta name="description" content="随机函数srand()和rand()的使用 在VC++中没有random()和randomize()函数，只有rand()和srand()函数。 这两个函数都包含在头文件“stdlib.h”中。 srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机数的发生器，而srand()是用来给rand()提供随机变量（也称之为种子）。 如果不通过srand()向rand()提供不">
+<meta name="keywords" content="C语言,技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言中随机函数的使用">
 <meta property="og:url" content="http://yoursite.com/2017/09/16/c-srand-rand/index.html">
 <meta property="og:site_name" content="程序猿的路">
-<meta property="og:description" content="随机函数srand()和rand()的使用 在VC++中没有random()和randomize()函数，只有rand()和srand()函数。 这两个函数都包含在头文件中。 srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机数的发生器，而srand()是用来给rand()提供随机变量（也称之为种子）。 如果不通过srand()向rand()提供不同的种子，那么ran">
+<meta property="og:description" content="随机函数srand()和rand()的使用 在VC++中没有random()和randomize()函数，只有rand()和srand()函数。 这两个函数都包含在头文件“stdlib.h”中。 srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机数的发生器，而srand()是用来给rand()提供随机变量（也称之为种子）。 如果不通过srand()向rand()提供不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-16T12:49:11.588Z">
+<meta property="og:updated_time" content="2017-09-18T08:22:06.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言中随机函数的使用">
-<meta name="twitter:description" content="随机函数srand()和rand()的使用 在VC++中没有random()和randomize()函数，只有rand()和srand()函数。 这两个函数都包含在头文件中。 srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机数的发生器，而srand()是用来给rand()提供随机变量（也称之为种子）。 如果不通过srand()向rand()提供不同的种子，那么ran">
+<meta name="twitter:description" content="随机函数srand()和rand()的使用 在VC++中没有random()和randomize()函数，只有rand()和srand()函数。 这两个函数都包含在头文件“stdlib.h”中。 srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机数的发生器，而srand()是用来给rand()提供随机变量（也称之为种子）。 如果不通过srand()向rand()提供不">
 
 
 
@@ -113,7 +114,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.2',
     sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -273,7 +274,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶落满城">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -308,6 +309,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/专业学习/" itemprop="url" rel="index">
+                    <span itemprop="name">专业学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -337,10 +360,10 @@
       
         <h2 id="随机函数srand-和rand-的使用"><a href="#随机函数srand-和rand-的使用" class="headerlink" title="随机函数srand()和rand()的使用"></a>随机函数srand()和rand()的使用</h2><ul>
 <li>在VC++中没有random()和randomize()函数，只有rand()和srand()函数。</li>
-<li>这两个函数都包含在头文件<stdlib.h>中。</stdlib.h></li>
+<li>这两个函数都包含在头文件“stdlib.h”中。</li>
 <li>srand()和rand()函数必须同时使用。<br> 其中，rand()是用来产生随机数的发生器，而srand()是用来给rand()提供随机变量（也称之为种子）。<br> 如果不通过srand()向rand()提供不同的种子，那么rand()产生的随机数只能是伪随机数，即每次产生的随机数都是一样的。如果程序中没有srand()函数，程序会默认调用srand（1）。</li>
-<li>在使用中，通常加入<time.h>头文件，调用time(NULL)函数的返回值作为srand()的参数，即srand(time(NULL)),意思是以当前的系统时间作为随机数的种子来生成随机数。只有设置为NULL才能获取当前的系统时间。<h2 id="程序实例"><a href="#程序实例" class="headerlink" title="程序实例"></a>程序实例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">      <span class="keyword">int</span> a,b,c,n;</div><div class="line">	  srand(time(<span class="literal">NULL</span>));</div><div class="line">	  <span class="keyword">for</span>(n=<span class="number">0</span>;n&lt;<span class="number">3</span>;n++)&#123;</div><div class="line">	  a = rand()%<span class="number">11</span>;</div><div class="line">	  b = rand()%<span class="number">11</span>;</div><div class="line">	  c = rand()%<span class="number">4</span>;</div><div class="line">		  <span class="keyword">switch</span>(c)&#123;</div><div class="line">			 <span class="keyword">case</span> <span class="number">0</span>:<span class="built_in">printf</span>(<span class="string">"%d+%d=%d\n"</span>,a,b,a+b);<span class="keyword">break</span>;</div><div class="line">			 <span class="keyword">case</span> <span class="number">1</span>:<span class="built_in">printf</span>(<span class="string">"%d-%d=%d\n"</span>,a,b,a-b);<span class="keyword">break</span>;</div><div class="line">			 <span class="keyword">case</span> <span class="number">2</span>:<span class="built_in">printf</span>(<span class="string">"%d*%d=%d\n"</span>,a,b,a*b);<span class="keyword">break</span>;</div><div class="line">			 <span class="keyword">case</span> <span class="number">3</span>:<span class="built_in">printf</span>(<span class="string">"%d/%d=%f\n"</span>,a,b,a/b);<span class="keyword">break</span>;</div><div class="line">	  &#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</time.h></li>
+<li>在使用中，通常加入“time.h”头文件，调用time(NULL)函数的返回值作为srand()的参数，即srand(time(NULL)),意思是以当前的系统时间作为随机数的种子来生成随机数。只有设置为NULL才能获取当前的系统时间。<h2 id="程序实例"><a href="#程序实例" class="headerlink" title="程序实例"></a>程序实例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">      <span class="keyword">int</span> a,b,c,n;</div><div class="line">	  srand(time(<span class="literal">NULL</span>));</div><div class="line">	  <span class="keyword">for</span>(n=<span class="number">0</span>;n&lt;<span class="number">3</span>;n++)&#123;</div><div class="line">	  a = rand()%<span class="number">11</span>;</div><div class="line">	  b = rand()%<span class="number">11</span>;</div><div class="line">	  c = rand()%<span class="number">4</span>;</div><div class="line">		  <span class="keyword">switch</span>(c)&#123;</div><div class="line">			 <span class="keyword">case</span> <span class="number">0</span>:<span class="built_in">printf</span>(<span class="string">"%d+%d=%d\n"</span>,a,b,a+b);<span class="keyword">break</span>;</div><div class="line">			 <span class="keyword">case</span> <span class="number">1</span>:<span class="built_in">printf</span>(<span class="string">"%d-%d=%d\n"</span>,a,b,a-b);<span class="keyword">break</span>;</div><div class="line">			 <span class="keyword">case</span> <span class="number">2</span>:<span class="built_in">printf</span>(<span class="string">"%d*%d=%d\n"</span>,a,b,a*b);<span class="keyword">break</span>;</div><div class="line">			 <span class="keyword">case</span> <span class="number">3</span>:<span class="built_in">printf</span>(<span class="string">"%d/%d=%f\n"</span>,a,b,a/b);<span class="keyword">break</span>;</div><div class="line">	  &#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -356,6 +379,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C语言/" rel="tag"># C语言</a>
+          
+            <a href="/tags/技术/" rel="tag"># 技术</a>
+          
+        </div>
       
 
       
@@ -439,8 +470,12 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="叶落满城" />
+          
             <p class="site-author-name" itemprop="name">叶落满城</p>
-            <p class="site-description motion-element" itemprop="description"></p>
+            <p class="site-description motion-element" itemprop="description">You have a dream, you got to protect it.</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -457,7 +492,25 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -465,6 +518,14 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/OwnProgram" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
           
         </div>
 
@@ -526,7 +587,7 @@
 
   <span class="post-meta-divider">|</span>
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
 
 
         
@@ -569,10 +630,9 @@
   
 
 
+  
 
 
-  
-  
 
 
 
@@ -601,10 +661,7 @@
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
-  <script type="text/javascript" src="/lib/three/three.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
@@ -618,13 +675,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
 
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>

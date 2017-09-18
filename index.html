@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -95,13 +95,16 @@
 
 
 
+<meta name="description" content="You have a dream, you got to protect it.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="程序猿的路">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="程序猿的路">
+<meta property="og:description" content="You have a dream, you got to protect it.">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="程序猿的路">
+<meta name="twitter:description" content="You have a dream, you got to protect it.">
 
 
 
@@ -109,7 +112,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.2',
     sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -270,7 +273,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶落满城">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -307,6 +310,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/专业学习/" itemprop="url" rel="index">
+                    <span itemprop="name">专业学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -338,8 +363,8 @@
           
           随机函数srand()和rand()的使用
 在VC++中没有random()和randomize()函数，只有rand()和srand()函数。
-这两个函数都包含在头文件中。
-srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机数的发生器，而srand()是用来给rand
+这两个函数都包含在头文件“stdlib.h”中。
+srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机数的发生器，而srand
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -399,7 +424,7 @@ srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶落满城">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -541,8 +566,12 @@ srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="叶落满城" />
+          
             <p class="site-author-name" itemprop="name">叶落满城</p>
-            <p class="site-description motion-element" itemprop="description"></p>
+            <p class="site-description motion-element" itemprop="description">You have a dream, you got to protect it.</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -559,7 +588,25 @@ srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -567,6 +614,14 @@ srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/OwnProgram" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
           
         </div>
 
@@ -612,7 +667,7 @@ srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机
 
   <span class="post-meta-divider">|</span>
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
 
 
         
@@ -655,10 +710,9 @@ srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机
   
 
 
+  
 
 
-  
-  
 
 
 
@@ -687,10 +741,7 @@ srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
-  <script type="text/javascript" src="/lib/three/three.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
@@ -704,13 +755,6 @@ srand()和rand()函数必须同时使用。 其中，rand()是用来产生随机
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
 
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
