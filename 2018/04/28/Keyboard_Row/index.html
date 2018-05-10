@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="Reverse Words in a StringGiven a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.Example 1:12Input: &amp;quot;Le">
+<meta name="description" content="Keyboard RowGiven a List of words, return the words that can be typed using letters of alphabet on only one row’s of American keyboard .Example 1:12Input: [&amp;quot;Hello&amp;quot;, &amp;quot;Alaska&amp;quot;, &amp;quot">
 <meta name="keywords" content="Leetcode,算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Reverse Words in a String">
-<meta property="og:url" content="http://yoursite.com/2018/04/16/Reverse_Words_in_a_String/index.html">
+<meta property="og:title" content="Keyboard Row">
+<meta property="og:url" content="http://yoursite.com/2018/04/28/Keyboard_Row/index.html">
 <meta property="og:site_name" content="程序猿的路">
-<meta property="og:description" content="Reverse Words in a StringGiven a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.Example 1:12Input: &amp;quot;Le">
+<meta property="og:description" content="Keyboard RowGiven a List of words, return the words that can be typed using letters of alphabet on only one row’s of American keyboard .Example 1:12Input: [&amp;quot;Hello&amp;quot;, &amp;quot;Alaska&amp;quot;, &amp;quot">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-16T13:26:23.894Z">
+<meta property="og:updated_time" content="2018-04-28T00:18:37.321Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Reverse Words in a String">
-<meta name="twitter:description" content="Reverse Words in a StringGiven a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.Example 1:12Input: &amp;quot;Le">
+<meta name="twitter:title" content="Keyboard Row">
+<meta name="twitter:description" content="Keyboard RowGiven a List of words, return the words that can be typed using letters of alphabet on only one row’s of American keyboard .Example 1:12Input: [&amp;quot;Hello&amp;quot;, &amp;quot;Alaska&amp;quot;, &amp;quot">
 
 
 
@@ -136,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/16/Reverse_Words_in_a_String/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/28/Keyboard_Row/"/>
 
 
 
 
 
-  <title>Reverse Words in a String | 程序猿的路</title>
+  <title>Keyboard Row | 程序猿的路</title>
   
 
 
@@ -269,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/16/Reverse_Words_in_a_String/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/Keyboard_Row/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶落满城">
@@ -286,7 +286,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Reverse Words in a String</h1>
+          <h1 class="post-title" itemprop="name headline">Keyboard Row</h1>
         
 
         <div class="post-meta">
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-16T21:25:16+08:00">
-                2018-04-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T08:14:18+08:00">
+                2018-04-28
               </time>
             
 
@@ -358,9 +358,12 @@
       
 
       
-        <h2 id="Reverse-Words-in-a-String"><a href="#Reverse-Words-in-a-String" class="headerlink" title="Reverse Words in a String"></a>Reverse Words in a String</h2><p>Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.<br>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: &quot;Let&apos;s take LeetCode contest&quot;</div><div class="line">Output: &quot;s&apos;teL ekat edoCteeL tsetnoc&quot;</div></pre></td></tr></table></figure></p>
-<h2 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">str = <span class="string">"Let's take LeetCode contest"</span></div><div class="line">list = str.split(<span class="string">' '</span>)</div><div class="line">result1 = []</div><div class="line">result2 = <span class="string">""</span></div><div class="line"><span class="keyword">for</span> w <span class="keyword">in</span> list:</div><div class="line">    result1.append(w[::<span class="number">-1</span>])</div><div class="line"><span class="keyword">for</span> word <span class="keyword">in</span> result1:</div><div class="line">    result2+=word+<span class="string">" "</span></div><div class="line">print(result2)</div></pre></td></tr></table></figure>
-<h2 id="note"><a href="#note" class="headerlink" title="note"></a>note</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(type(str.split(<span class="string">' '</span>)))</div><div class="line"></div><div class="line">&gt;&gt;<span class="class"><span class="keyword">class</span> '<span class="title">list</span>'</span></div></pre></td></tr></table></figure>
+        <h2 id="Keyboard-Row"><a href="#Keyboard-Row" class="headerlink" title="Keyboard Row"></a>Keyboard Row</h2><p>Given a List of words, return the words that can be typed using letters of alphabet on only one row’s of American keyboard .<br>Example 1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: [&quot;Hello&quot;, &quot;Alaska&quot;, &quot;Dad&quot;, &quot;Peace&quot;]</div><div class="line">Output: [&quot;Alaska&quot;, &quot;Dad&quot;]</div></pre></td></tr></table></figure></p>
+<h2 id="method-1"><a href="#method-1" class="headerlink" title="method 1"></a>method 1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">keyboard1 = &quot;qwertyuiopQWERTYUIOP&quot;</div><div class="line">keyboard2 = &quot;asdfghjklASDFGHJKL&quot;</div><div class="line">keyboard3 = &quot;zxcvbnmZXCVBNM&quot;</div><div class="line">s = [&quot;Hello&quot;, &quot;Alaska&quot;, &quot;Dad&quot;, &quot;Peace&quot;]</div><div class="line">result = []</div><div class="line">for w in s:</div><div class="line">    n1 = n2 = n3 = 0</div><div class="line">    if w[0] in keyboard1:</div><div class="line">        for w1 in w:</div><div class="line">            if w1 in keyboard1:</div><div class="line">                n1+=1</div><div class="line">            if n1 == len(w):</div><div class="line">                result.append(w)</div><div class="line">    elif w[0] in keyboard2:</div><div class="line">        for w2 in w:</div><div class="line">            if w2 in keyboard2:</div><div class="line">                n2+=1</div><div class="line">            if n2 == len(w):</div><div class="line">                result.append(w)</div><div class="line">    elif w[0] in keyboard3:</div><div class="line">        for w3 in w:</div><div class="line">            if w3 in keyboard3:</div><div class="line">                n3+=1</div><div class="line">            if n3 == len(w):</div><div class="line">                result.append(w)</div><div class="line">print(result)</div></pre></td></tr></table></figure>
+<h2 id="method-2"><a href="#method-2" class="headerlink" title="method 2"></a>method 2</h2><p>利用python中的set()方法，求交集以判定输入字符串是否存在于指定字符串中。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">keyboard1 =set(<span class="string">"qwertyuiop"</span>)</div><div class="line">keyboard2 =set(<span class="string">"asdfghjkl"</span>)</div><div class="line">keyboard3 =set( <span class="string">"zxcvbnm"</span>)</div><div class="line">s = [<span class="string">"Hello"</span>, <span class="string">"Alaska"</span>, <span class="string">"Dad"</span>, <span class="string">"Peace"</span>]</div><div class="line">result = []</div><div class="line"><span class="keyword">for</span> word <span class="keyword">in</span> s:</div><div class="line">    w = set(word.lower())</div><div class="line">    <span class="keyword">if</span> w &amp; keyboard1 == w:</div><div class="line">        result.append(word)</div><div class="line">    <span class="keyword">elif</span> w &amp; keyboard2 == w:</div><div class="line">        result.append(word)</div><div class="line">    <span class="keyword">elif</span> w &amp; keyboard3 == w:</div><div class="line">        result.append(word)</div><div class="line">print(result)</div></pre></td></tr></table></figure></p>
+<h2 id="note"><a href="#note" class="headerlink" title="note"></a>note</h2><h3 id="str-lower"><a href="#str-lower" class="headerlink" title="str.lower()"></a>str.lower()</h3><pre><code>该方法返回将字符串中所有大写字符转换为小写后生成的字符串。
+</code></pre><h3 id="set"><a href="#set" class="headerlink" title="set()"></a>set()</h3><pre><code>set() 函数创建一个无序不重复元素集，可进行关系测试，删除重复数据，还可以计算交集、差集、并集等
+</code></pre><p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">s1 = set(&quot;abcdefg&quot;)</div><div class="line">s2 = set(&quot;abcdehk&quot;)</div><div class="line">print(s1 &amp; s2)  #交集</div><div class="line">print(s1 | s2)  #并集</div><div class="line">print(s1 - s2)  #差集</div><div class="line"></div><div class="line">&gt;&gt;&#123;&apos;c&apos;, &apos;e&apos;, &apos;b&apos;, &apos;d&apos;, &apos;a&apos;&#125;</div><div class="line">  &#123;&apos;f&apos;, &apos;c&apos;, &apos;e&apos;, &apos;b&apos;, &apos;h&apos;, &apos;g&apos;, &apos;d&apos;, &apos;a&apos;, &apos;k&apos;&#125;</div><div class="line">  &#123;&apos;f&apos;, &apos;g&apos;&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -393,8 +396,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/12/Number_Complement/" rel="next" title="Number Complement">
-                <i class="fa fa-chevron-left"></i> Number Complement
+              <a href="/2018/04/28/Distribute_Candies/" rel="next" title="Distribute Candies">
+                <i class="fa fa-chevron-left"></i> Distribute Candies
               </a>
             
           </div>
@@ -403,8 +406,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/16/Reverse_String/" rel="prev" title="Reverse String">
-                Reverse String <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/28/Toeplitz_Matrix/" rel="prev" title="Toeplitz Matrix">
+                Toeplitz Matrix <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -550,7 +553,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reverse-Words-in-a-String"><span class="nav-number">1.</span> <span class="nav-text">Reverse Words in a String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution"><span class="nav-number">2.</span> <span class="nav-text">solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note"><span class="nav-number">3.</span> <span class="nav-text">note</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Keyboard-Row"><span class="nav-number">1.</span> <span class="nav-text">Keyboard Row</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#method-1"><span class="nav-number">2.</span> <span class="nav-text">method 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#method-2"><span class="nav-number">3.</span> <span class="nav-text">method 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note"><span class="nav-number">4.</span> <span class="nav-text">note</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#str-lower"><span class="nav-number">4.1.</span> <span class="nav-text">str.lower()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set"><span class="nav-number">4.2.</span> <span class="nav-text">set()</span></a></li></ol></li></ol></div>
             
 
           </div>
