@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="机器学习,深度学习," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="反向传播笔记链式法则链式法则是在本科课程中导数的一个基本属性。它指出，假设有三个函数f、g和h，其中f是g的函数，g是h的函数，那么f相对于h的导数等于f相对于g的导数和g相对于h的导数的乘积，用公式表示如下： 反向传播这是一场以误差（Error）为主导的反向传播（Back Propagation）运动，旨在得到最优的全局参数矩阵，进而将多层神经网络应用到分类或者回归任务中去。前向传递输入信号直至">
+<meta name="keywords" content="机器学习,深度学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="反向传播笔记">
+<meta property="og:url" content="http://yoursite.com/2018/09/24/反向传播笔记/index.html">
+<meta property="og:site_name" content="程序猿的路">
+<meta property="og:description" content="反向传播笔记链式法则链式法则是在本科课程中导数的一个基本属性。它指出，假设有三个函数f、g和h，其中f是g的函数，g是h的函数，那么f相对于h的导数等于f相对于g的导数和g相对于h的导数的乘积，用公式表示如下： 反向传播这是一场以误差（Error）为主导的反向传播（Back Propagation）运动，旨在得到最优的全局参数矩阵，进而将多层神经网络应用到分类或者回归任务中去。前向传递输入信号直至">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/JMBH8bq.png">
+<meta property="og:image" content="https://i.imgur.com/hzxBwF2.png">
+<meta property="og:image" content="https://i.imgur.com/PO5KWMs.png">
+<meta property="og:image" content="https://i.imgur.com/Yr6nbrA.png">
+<meta property="og:image" content="https://i.imgur.com/80Rmj7H.png">
+<meta property="og:image" content="https://i.imgur.com/YibWm2d.png">
+<meta property="og:image" content="https://i.imgur.com/q3duhZg.png">
+<meta property="og:image" content="https://i.imgur.com/hif3A2i.png">
+<meta property="og:image" content="https://i.imgur.com/36trXYJ.png">
+<meta property="og:image" content="https://i.imgur.com/BuzsRFB.png">
+<meta property="og:image" content="https://i.imgur.com/YgsR7i8.png">
+<meta property="og:image" content="https://i.imgur.com/ci04ODw.png">
+<meta property="og:image" content="https://i.imgur.com/xsrIxWY.png">
+<meta property="og:image" content="https://i.imgur.com/mvbr5F6.png">
+<meta property="og:image" content="https://i.imgur.com/rnPDvd9.png">
+<meta property="og:image" content="https://i.imgur.com/ZpvlbHO.png">
+<meta property="og:image" content="https://i.imgur.com/QT6ucAO.png">
+<meta property="og:image" content="https://i.imgur.com/eE1rTLv.png">
+<meta property="og:image" content="https://i.imgur.com/sG6OMfX.png">
+<meta property="og:image" content="https://i.imgur.com/ZCnw4Sw.png">
+<meta property="og:updated_time" content="2018-09-24T08:25:43.195Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="反向传播笔记">
+<meta name="twitter:description" content="反向传播笔记链式法则链式法则是在本科课程中导数的一个基本属性。它指出，假设有三个函数f、g和h，其中f是g的函数，g是h的函数，那么f相对于h的导数等于f相对于g的导数和g相对于h的导数的乘积，用公式表示如下： 反向传播这是一场以误差（Error）为主导的反向传播（Back Propagation）运动，旨在得到最优的全局参数矩阵，进而将多层神经网络应用到分类或者回归任务中去。前向传递输入信号直至">
+<meta name="twitter:image" content="https://i.imgur.com/JMBH8bq.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/24/反向传播笔记/"/>
+
+
+
+
+
+  <title>反向传播笔记 | 程序猿的路</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">程序猿的路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">漫漫其修远兮</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/反向传播笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叶落满城">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="程序猿的路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">反向传播笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-24T16:21:29+08:00">
+                2018-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/专业学习/" itemprop="url" rel="index">
+                    <span itemprop="name">专业学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="反向传播笔记"><a href="#反向传播笔记" class="headerlink" title="反向传播笔记"></a>反向传播笔记</h2><h3 id="链式法则"><a href="#链式法则" class="headerlink" title="链式法则"></a>链式法则</h3><p>链式法则是在本科课程中导数的一个基本属性。它指出，假设有三个函数f、g和h，其中f是g的函数，g是h的函数，那么f相对于h的导数等于f相对于g的导数和g相对于h的导数的乘积，用公式表示如下：<br><img src="https://i.imgur.com/JMBH8bq.png" alt=""></p>
+<h3 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h3><p>这是一场以误差（Error）为主导的反向传播（Back Propagation）运动，旨在得到最优的全局参数矩阵，进而将多层神经网络应用到分类或者回归任务中去。<br>前向传递输入信号直至输出产生误差，反向传播误差信息更新权重矩阵。这两句话很好的形容了信息的流动方向，权重得以在信息双向流动中得到优化。</p>
+<h4 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h4><p>利用梯度下降算法，每次更新权重如下：<br><img src="https://i.imgur.com/hzxBwF2.png" alt=""><br>其中，J（W,b）是我们定义的损失函数。通常为J（W，b）=1/2||output-y||^2,output为使用当前的权重值算出来的输出，y为训练数据，用这个函数度量误差。<br>根据上式，只要计算出每条边上损失函数对权重值微分，以及对偏置微分，就可以更新权重和偏置。<br>在反向传播算法中，定义残差的概念。每一个节点有一个残差，计算公式如下：<br><img src="https://i.imgur.com/PO5KWMs.png" alt=""><br>其中<img src="https://i.imgur.com/Yr6nbrA.png" alt="">是nl-1层第i个节点的输入和。<br>经过链式法则推导，得到以下计算公式：<br><img src="https://i.imgur.com/80Rmj7H.png" alt=""><br>其中，<img src="https://i.imgur.com/YibWm2d.png" alt="">是使用当前权重和偏置计算得出的第l层第j个输出。</p>
+<p>现在问题变为：只要我们计算出每一个节点的残差，根据(3)(4)就可以计算出每一个<img src="https://i.imgur.com/q3duhZg.png" alt="">和<img src="https://i.imgur.com/hif3A2i.png" alt="">，有了它们就可以更新权重了。</p>
+<p>对于最后一层，残差为：<br><img src="https://i.imgur.com/36trXYJ.png" alt=""><br>其中，<img src="https://i.imgur.com/BuzsRFB.png" alt="">是使用当前权重和偏置计算出第l层（也就是这种情况下的输出层）。<br><img src="https://i.imgur.com/YgsR7i8.png" alt="">是nl-1层网络对nl层第i个节点的输入和。</p>
+<p>有了最后一层的残差，可以依次向前推导前一层各个节点的残差。计算公式：<br><img src="https://i.imgur.com/ci04ODw.png" alt=""><br>文字描述：第l层的第i个节点A的残差=【【第l+1层所有和A有连接的节点的残差】乘以对应连接权重，最后求和】乘以节点A的激活函数的导数。</p>
+<h3 id="反向传播简单实例"><a href="#反向传播简单实例" class="headerlink" title="反向传播简单实例"></a>反向传播简单实例</h3><p>如下三层神经网络（该神经网络没有设置偏置b，遇到有b的情况，依然根据上述公式计算。过程类似），并设f(x)=a,该函数倒数为1.目标值为0.5，学习率0.5.<br><img src="https://i.imgur.com/xsrIxWY.png" alt=""><br>首先前向传播计算每一个节点的值：<br><img src="https://i.imgur.com/mvbr5F6.png" alt=""><br>然后计算每个节点的残差，第一层残差不需要计算：<br>先从输出层节点计算：<br><img src="https://i.imgur.com/rnPDvd9.png" alt=""><br>接下来是倒数第二层的节点残差：<br><img src="https://i.imgur.com/ZpvlbHO.png" alt=""><br>第一层节点残差无需计算，为演示公式，计算如下：<br><img src="https://i.imgur.com/QT6ucAO.png" alt=""><br>此时计算所有损失函数对权重w的偏导：<br><img src="https://i.imgur.com/eE1rTLv.png" alt=""><br>最后，可以更新参数权重啦！！！！<br><img src="https://i.imgur.com/sG6OMfX.png" alt=""><br>权重已经更新，检验输出是否得到提升：<br><img src="https://i.imgur.com/ZCnw4Sw.png" alt=""><br>目标值是0.5，权重未更新的时候，我们算出输出值为0.8385,在更新权重过后，算出来的输出值是0.5441，效果得到提升！！！！！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/24/Third_Maximum_Number/" rel="next" title="Third Maximum Number">
+                <i class="fa fa-chevron-left"></i> Third Maximum Number
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/24/梯度下降笔记/" rel="prev" title="梯度下降法笔记">
+                梯度下降法笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="叶落满城" />
+          
+            <p class="site-author-name" itemprop="name">叶落满城</p>
+            <p class="site-description motion-element" itemprop="description">You have a dream, you got to protect it.</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/OwnProgram" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#反向传播笔记"><span class="nav-number">1.</span> <span class="nav-text">反向传播笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链式法则"><span class="nav-number">1.1.</span> <span class="nav-text">链式法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向传播"><span class="nav-number">1.2.</span> <span class="nav-text">反向传播</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#过程"><span class="nav-number">1.2.1.</span> <span class="nav-text">过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向传播简单实例"><span class="nav-number">1.3.</span> <span class="nav-text">反向传播简单实例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叶落满城</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
