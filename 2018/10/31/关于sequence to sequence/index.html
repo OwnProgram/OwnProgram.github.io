@@ -95,32 +95,20 @@
 
 
 
-<meta name="description" content="梯度下降法笔记感谢简书博主六尺帐篷的博文——深入浅出—梯度下降法及其实现（https://www.jianshu.com/p/c7e642877b0e）下山问题假设我们位于一座山的山腰位置，要去山的最底处，但是山势连绵，不知道怎样才能走到山底。于是决定走一步算一步，也就是每次沿着当前位置最陡峭最易下山的方向前进一小步，一直走到觉得我们已经到达山底。 梯度下降梯度下降得过程类似于下山过程。首先，对于">
+<meta name="description" content="关于sequence to sequence模型Sequence to Sequence学习由论文Sequence to Sequence Learning with Neural Networks提出。   Our method uses a multilayered Long Short-Term Memory (LSTM) to map the input sequence to a vec">
 <meta name="keywords" content="深度学习,机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="梯度下降法笔记">
-<meta property="og:url" content="http://yoursite.com/2018/09/24/梯度下降笔记/index.html">
+<meta property="og:title" content="关于sequence to sequence模型">
+<meta property="og:url" content="http://yoursite.com/2018/10/31/关于sequence to sequence/index.html">
 <meta property="og:site_name" content="程序猿的路">
-<meta property="og:description" content="梯度下降法笔记感谢简书博主六尺帐篷的博文——深入浅出—梯度下降法及其实现（https://www.jianshu.com/p/c7e642877b0e）下山问题假设我们位于一座山的山腰位置，要去山的最底处，但是山势连绵，不知道怎样才能走到山底。于是决定走一步算一步，也就是每次沿着当前位置最陡峭最易下山的方向前进一小步，一直走到觉得我们已经到达山底。 梯度下降梯度下降得过程类似于下山过程。首先，对于">
+<meta property="og:description" content="关于sequence to sequence模型Sequence to Sequence学习由论文Sequence to Sequence Learning with Neural Networks提出。   Our method uses a multilayered Long Short-Term Memory (LSTM) to map the input sequence to a vec">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/Yh7aD5W.png">
-<meta property="og:image" content="https://i.imgur.com/IBOiE30.png">
-<meta property="og:image" content="https://i.imgur.com/lxHctPK.png">
-<meta property="og:image" content="https://i.imgur.com/Kkf3ql8.png">
-<meta property="og:image" content="https://i.imgur.com/YDnZaFD.png">
-<meta property="og:image" content="https://i.imgur.com/bm7P3F6.png">
-<meta property="og:image" content="https://i.imgur.com/mc42a2F.png">
-<meta property="og:image" content="https://i.imgur.com/iHFtykc.png">
-<meta property="og:image" content="https://i.imgur.com/CHzBRoL.png">
-<meta property="og:image" content="https://i.imgur.com/GOgywyq.png">
-<meta property="og:image" content="https://i.imgur.com/xig8d8J.png">
-<meta property="og:image" content="https://i.imgur.com/aeI3BQT.png">
-<meta property="og:image" content="https://i.imgur.com/UvAom2H.png">
-<meta property="og:updated_time" content="2018-09-24T08:26:52.000Z">
+<meta property="og:image" content="https://i.imgur.com/X0UI0og.png">
+<meta property="og:updated_time" content="2018-10-31T12:46:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梯度下降法笔记">
-<meta name="twitter:description" content="梯度下降法笔记感谢简书博主六尺帐篷的博文——深入浅出—梯度下降法及其实现（https://www.jianshu.com/p/c7e642877b0e）下山问题假设我们位于一座山的山腰位置，要去山的最底处，但是山势连绵，不知道怎样才能走到山底。于是决定走一步算一步，也就是每次沿着当前位置最陡峭最易下山的方向前进一小步，一直走到觉得我们已经到达山底。 梯度下降梯度下降得过程类似于下山过程。首先，对于">
-<meta name="twitter:image" content="https://i.imgur.com/Yh7aD5W.png">
+<meta name="twitter:title" content="关于sequence to sequence模型">
+<meta name="twitter:description" content="关于sequence to sequence模型Sequence to Sequence学习由论文Sequence to Sequence Learning with Neural Networks提出。   Our method uses a multilayered Long Short-Term Memory (LSTM) to map the input sequence to a vec">
+<meta name="twitter:image" content="https://i.imgur.com/X0UI0og.png">
 
 
 
@@ -150,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/24/梯度下降笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/31/关于sequence to sequence/"/>
 
 
 
 
 
-  <title>梯度下降法笔记 | 程序猿的路</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>关于sequence to sequence模型 | 程序猿的路</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -283,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/梯度下降笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/31/关于sequence to sequence/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶落满城">
@@ -300,7 +288,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">梯度下降法笔记</h1>
+          <h1 class="post-title" itemprop="name headline">关于sequence to sequence模型</h1>
         
 
         <div class="post-meta">
@@ -312,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-24T16:27:09+08:00">
-                2018-09-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-31T20:46:42+08:00">
+                2018-10-31
               </time>
             
 
@@ -372,27 +360,27 @@
       
 
       
-        <h2 id="梯度下降法笔记"><a href="#梯度下降法笔记" class="headerlink" title="梯度下降法笔记"></a>梯度下降法笔记</h2><h5 id="感谢简书博主六尺帐篷的博文——深入浅出—梯度下降法及其实现（https-www-jianshu-com-p-c7e642877b0e）"><a href="#感谢简书博主六尺帐篷的博文——深入浅出—梯度下降法及其实现（https-www-jianshu-com-p-c7e642877b0e）" class="headerlink" title="感谢简书博主六尺帐篷的博文——深入浅出—梯度下降法及其实现（https://www.jianshu.com/p/c7e642877b0e）"></a>感谢简书博主六尺帐篷的博文——深入浅出—梯度下降法及其实现（<a href="https://www.jianshu.com/p/c7e642877b0e）" target="_blank" rel="external">https://www.jianshu.com/p/c7e642877b0e）</a></h5><h3 id="下山问题"><a href="#下山问题" class="headerlink" title="下山问题"></a>下山问题</h3><p>假设我们位于一座山的山腰位置，要去山的最底处，但是山势连绵，不知道怎样才能走到山底。于是决定走一步算一步，也就是每次沿着当前位置最陡峭最易下山的方向前进一小步，一直走到觉得我们已经到达山底。<br><img src="https://i.imgur.com/Yh7aD5W.png" alt=""></p>
-<h3 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h3><p>梯度下降得过程类似于下山过程。<br>首先，对于一个可微分的函数就是一座山，我们的目标是走到山底，也就是要找到这个函数的最小值。根据下山问题，最宽的下山方式是找到当前位置最陡峭的方向，然后沿着这个方向向下走。放在函数中，就是找到给顶点的梯度，然后沿着梯度相反的方向移动，就能让函数值下降的最快。（梯度的方向是函数增长最快的方向）</p>
-<h3 id="微分"><a href="#微分" class="headerlink" title="微分"></a>微分</h3><p>微分：</p>
-<ol>
-<li>函数图像中某一点的切线的斜率</li>
-<li>函数的变化率<br><img src="https://i.imgur.com/IBOiE30.png" alt=""></li>
-</ol>
-<hr>
-<p>多变量微分，分别对每个变量微分<br><img src="https://i.imgur.com/lxHctPK.png" alt=""></p>
-<hr>
-<h3 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h3><p>梯度的本意是一个向量（矢量），表示某一函数在该点处的方向导数沿着该方向取得最大值，即函数在该点处沿着该方向（此梯度的方向）变化最快，变化率最大（为该梯度的模）。<br><img src="https://i.imgur.com/Kkf3ql8.png" alt=""></p>
-<ul>
-<li>在单变量的函数中，梯度其实就是函数的微分，代表着函数在某个给定点的切线的斜率</li>
-<li>在多变量函数中，梯度是一个向量，向量有方向，梯度的方向就指出了函数在给定点的上升最快的方向<br>这也就说明了为什么我们需要千方百计的求取梯度！梯度的方向是函数在给定点上升最快的方向，那么梯度的反方向就是函数在给定点下降最快的方向，所以只要沿着梯度的方向一直移动，就能找到到局部的最低点。</li>
+        <h2 id="关于sequence-to-sequence模型"><a href="#关于sequence-to-sequence模型" class="headerlink" title="关于sequence to sequence模型"></a>关于sequence to sequence模型</h2><p>Sequence to Sequence学习由论文<strong><em>Sequence to Sequence Learning with Neural Networks</em></strong>提出。</p>
+<blockquote>
+<p> Our method uses a multilayered Long Short-Term Memory (LSTM) to map the input sequence to a vector of a ﬁxed dimensionality, and then another deep LSTM to decode the target sequence from the vector.</p>
+</blockquote>
+<p>这篇文章主要是提供了一种崭新的RNN Encoder-Decoder算法，并且将其应用于机器翻译中。抽象Encoder-Decoder框架如下图：</p>
+<p><img src="https://i.imgur.com/X0UI0og.png" alt=""></p>
+<p>所谓的RNN Encoder-Decoder结构，简单的来说就是算法包含两部分，一个负责对输入的信息进行Encoding(编码)，所谓编码，就是将输入序列转化成一个固定长度的向量，将输入转换为向量形式。然后由Decoder对这个向量进行解码，解码，就是将之前生成的固定向量再转化成输出序列。而RNN Encoder-Decoder结构就是编码器与解码器都是使用RNN算法，一般为LSTM或LSTM的变体（GRU）。LSTM的优势在于处理序列，它可以将上文包含的信息保存在隐藏状态中，这样就提高了算法对于上下文的理解能力。</p>
+<p>Encoder与Decoder各自可以算是单独的模型，一般是一层或多层的LSTM。</p>
+<p>Encoder-Decoder框架可以这么直观地去理解：可以把它看作适合处理由一个句子（或篇章）生成另外一个句子（或篇章）的通用处理模型。对于句子对<x,y>，我们的目标是给定输入句子X，期待通过Encoder-Decoder框架来生成目标句子Y。X和Y可以是同一种语言，也可以是两种不同的语言。</x,y></p>
+<blockquote>
+<p> Encoder对输入的句子进行编码，将输入的句子通过非线性变换转化为中间语义表示c；解码器Decoder根据句子的中间语义c和之前已经生成的历史输出信息y1,y2….yi-1来生成i时刻要生成的单词yi。每个yi都依次这样产生，那么看起来就是整个系统根据输入句子X生成了目标句子Y。</p>
+</blockquote>
+<h3 id="seq2seq的可能应用"><a href="#seq2seq的可能应用" class="headerlink" title="seq2seq的可能应用"></a>seq2seq的可能应用</h3><ul>
+<li>古诗生成，输入上句，输出下句</li>
+<li>对联生成 ，输入上联，输出下联</li>
+<li>对话机器人，输入用户对话，输出机器回答</li>
+<li>…</li>
 </ul>
-<h3 id="梯度下降的数学解释"><a href="#梯度下降的数学解释" class="headerlink" title="梯度下降的数学解释"></a>梯度下降的数学解释</h3><p>目标函数J(θ)关于参数θ的梯度将是目标函数上升最快的方向。对于最小化优化问题，只需要将参数沿着梯度相反的方向前进一个步长η，就可以实现目标函数的下降。这个步长η又称为学习速率。参数θ更新公式如下<br><img src="https://i.imgur.com/YDnZaFD.png" alt=""></p>
-<p>对于步长或学习速率θ，既不能太大也不能太小，太大则可能会错过最低点，太小则下降速度太慢。</p>
-<h3 id="梯度下降的简单实例"><a href="#梯度下降的简单实例" class="headerlink" title="梯度下降的简单实例"></a>梯度下降的简单实例</h3><p>对于一个神经网络而言，我们的目标是为了找到最适合的权重，使得最终的输出和我们预期的输出相差不大，也就是说，问题可以转化为，找到适当的权重值，使得最终误差最小。而为了使得最终误差最小，我们就得利用梯度下降法，对连接每一个神经元的边的权重进行迭代更新，更新后的权重构成的神经网络，误差变小，多次迭代，直到我们满意（误差小于一个阈值）。</p>
-<h4 id="单变量的梯度下降"><a href="#单变量的梯度下降" class="headerlink" title="单变量的梯度下降"></a>单变量的梯度下降</h4><p>现有单变量函数<br><img src="https://i.imgur.com/bm7P3F6.png" alt=""><br>求其梯度<br><img src="https://i.imgur.com/mc42a2F.png" alt=""><br>初始化其起点为θ0=1，学习率α设为0.4<br>根据上述参数更新公式，梯度下降迭代计算过程如下：<br><img src="https://i.imgur.com/iHFtykc.png" alt=""></p>
-<p>经过四次运算，基本到达函数图像最低点：<br><img src="https://i.imgur.com/CHzBRoL.png" alt=""></p>
-<h4 id="多变量函数的梯度下降"><a href="#多变量函数的梯度下降" class="headerlink" title="多变量函数的梯度下降"></a>多变量函数的梯度下降</h4><p>现有多变量函数<br><img src="https://i.imgur.com/GOgywyq.png" alt=""><br>观察可发现其最小值为0，现在通过梯度下降算法计算到这个值。<br>函数的梯度为：<br><img src="https://i.imgur.com/xig8d8J.png" alt=""><br>假设初始位置为：θ0=（1,3），学习速率为0.1<br>根据公式进行迭代计算：<br><img src="https://i.imgur.com/aeI3BQT.png" alt=""><br>100次以后：<br><img src="https://i.imgur.com/UvAom2H.png" alt=""></p>
+<hr>
+<p>参考：<br><a href="https://blog.csdn.net/malefactor/article/details/51124732" target="_blank" rel="external">https://blog.csdn.net/malefactor/article/details/51124732</a></p>
+<p><a href="https://www.jianshu.com/p/9bf7178279dc" target="_blank" rel="external">https://www.jianshu.com/p/9bf7178279dc</a></p>
 
       
     </div>
@@ -425,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/24/反向传播笔记/" rel="next" title="反向传播笔记">
-                <i class="fa fa-chevron-left"></i> 反向传播笔记
+              <a href="/2018/10/31/关于注意力机制(2)/" rel="next" title="关于注意力机制（二）">
+                <i class="fa fa-chevron-left"></i> 关于注意力机制（二）
               </a>
             
           </div>
@@ -435,8 +423,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/24/Rotate_String/" rel="prev" title="Rotate String">
-                Rotate String <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/31/关于RNN(1)/" rel="prev" title="关于循环神经网络（Recurrent Neural Network）（一）">
+                关于循环神经网络（Recurrent Neural Network）（一） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -582,7 +570,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降法笔记"><span class="nav-number">1.</span> <span class="nav-text">梯度下降法笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#感谢简书博主六尺帐篷的博文——深入浅出—梯度下降法及其实现（https-www-jianshu-com-p-c7e642877b0e）"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">感谢简书博主六尺帐篷的博文——深入浅出—梯度下降法及其实现（https://www.jianshu.com/p/c7e642877b0e）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下山问题"><span class="nav-number">1.1.</span> <span class="nav-text">下山问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降"><span class="nav-number">1.2.</span> <span class="nav-text">梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微分"><span class="nav-number">1.3.</span> <span class="nav-text">微分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度"><span class="nav-number">1.4.</span> <span class="nav-text">梯度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降的数学解释"><span class="nav-number">1.5.</span> <span class="nav-text">梯度下降的数学解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降的简单实例"><span class="nav-number">1.6.</span> <span class="nav-text">梯度下降的简单实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单变量的梯度下降"><span class="nav-number">1.6.1.</span> <span class="nav-text">单变量的梯度下降</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多变量函数的梯度下降"><span class="nav-number">1.6.2.</span> <span class="nav-text">多变量函数的梯度下降</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于sequence-to-sequence模型"><span class="nav-number">1.</span> <span class="nav-text">关于sequence to sequence模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#seq2seq的可能应用"><span class="nav-number">1.1.</span> <span class="nav-text">seq2seq的可能应用</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -721,24 +709,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
 
 
 
@@ -784,6 +755,43 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
   
 
 

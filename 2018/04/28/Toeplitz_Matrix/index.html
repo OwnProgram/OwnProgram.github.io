@@ -7,7 +7,7 @@
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -142,7 +142,7 @@
 
 
 
-  <title>Toeplitz Matrix | 程序猿的路</title>
+  <title>Toeplitz Matrix | 程序猿的路</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -161,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -361,10 +361,9 @@
         <h2 id="Toeplitz-Matrix"><a href="#Toeplitz-Matrix" class="headerlink" title="Toeplitz Matrix"></a>Toeplitz Matrix</h2><p>A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same element.<br>Now given an M x N matrix, return True if and only if the matrix is Toeplitz.<br>Example 1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Input: matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]]</div><div class="line">Output: True</div><div class="line">Explanation:</div><div class="line">1234</div><div class="line">5123</div><div class="line">9512</div><div class="line"></div><div class="line">In the above grid, the diagonals are &quot;[9]&quot;, &quot;[5, 5]&quot;, &quot;[1, 1, 1]&quot;, &quot;[2, 2, 2]&quot;, &quot;[3, 3]&quot;, &quot;[4]&quot;, and in each diagonal all elements are the same, so the answer is True.</div></pre></td></tr></table></figure></p>
 <p>Example 2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Input: matrix = [[1,2],[2,2]]</div><div class="line">Output: False</div><div class="line">Explanation:</div><div class="line">The diagonal &quot;[1, 2]&quot; has different elements.</div></pre></td></tr></table></figure></p>
 <h2 id="solution-1"><a href="#solution-1" class="headerlink" title="solution 1"></a>solution 1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">matrix = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">9</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">2</span>]]</div><div class="line">s = <span class="string">""</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(matrix)):</div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span> ,len(matrix[<span class="number">0</span>])):</div><div class="line">        <span class="keyword">if</span> i+<span class="number">1</span> &lt;= len(matrix)<span class="number">-1</span> <span class="keyword">and</span> j+<span class="number">1</span> &lt;= len(matrix[<span class="number">0</span>])<span class="number">-1</span>:</div><div class="line">            <span class="keyword">if</span> matrix[i][j] == matrix[i+<span class="number">1</span>][j+<span class="number">1</span>]:</div><div class="line">                s = <span class="string">"true"</span></div><div class="line">                print(matrix[i][j],matrix[i+<span class="number">1</span>][j+<span class="number">1</span>])</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                s = <span class="string">"false"</span></div><div class="line">                print(s)</div><div class="line">                exit()</div><div class="line">print(s)</div></pre></td></tr></table></figure>
-<p>###The idea of solving the problem<br>依次扫描矩阵中的所有元素，并把当前的元素s[i][j]与其右下角元素s[i+1][j+1]比较是否相同。若相等，则s的值为“true”,若在扫描过程中一旦遇到不相等的情况，则将s的值设为“false”，并结束该程序。</p>
+<h3 id="The-idea-of-solving-the-problem"><a href="#The-idea-of-solving-the-problem" class="headerlink" title="The idea of solving the problem"></a>The idea of solving the problem</h3><p>依次扫描矩阵中的所有元素，并把当前的元素s[i][j]与其右下角元素s[i+1][j+1]比较是否相同。若相等，则s的值为“true”,若在扫描过程中一旦遇到不相等的情况，则将s的值设为“false”，并结束该程序。</p>
 <h2 id="solution-2"><a href="#solution-2" class="headerlink" title="solution 2"></a>solution 2</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">s = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">9</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">2</span>]</div><div class="line">groups = &#123;&#125;</div><div class="line">result = <span class="string">"true"</span></div><div class="line"><span class="keyword">for</span>  r, row <span class="keyword">in</span> enumerate(s):</div><div class="line">    print( r, row)</div><div class="line">    <span class="keyword">for</span> c, val <span class="keyword">in</span> enumerate(row):</div><div class="line">        print(c, val)</div><div class="line">        <span class="keyword">if</span> r - c <span class="keyword">not</span> <span class="keyword">in</span> groups:</div><div class="line">            groups[r - c] = val</div><div class="line">            print(groups)</div><div class="line">        <span class="keyword">elif</span> groups[r - c] != val:</div><div class="line">            result = <span class="string">"false"</span></div><div class="line">print(result)</div></pre></td></tr></table></figure>
-<p>###The idea of solving the problem</p>
-<ol>
+<h3 id="The-idea-of-solving-the-problem-1"><a href="#The-idea-of-solving-the-problem-1" class="headerlink" title="The idea of solving the problem"></a>The idea of solving the problem</h3><ol>
 <li>把矩阵中每条对角线上的第一个元素设为该对角线的默认值，将其加入字典。</li>
 <li>同一条对角线上的元素,其 行编号减列编号 的值都相等。 </li>
 </ol>
@@ -500,7 +499,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -565,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Toeplitz-Matrix"><span class="nav-number">1.</span> <span class="nav-text">Toeplitz Matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-1"><span class="nav-number">2.</span> <span class="nav-text">solution 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-2"><span class="nav-number">3.</span> <span class="nav-text">solution 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note"><span class="nav-number">4.</span> <span class="nav-text">note</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-中的enumerate"><span class="nav-number">4.1.</span> <span class="nav-text">Python 中的enumerate()</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Toeplitz-Matrix"><span class="nav-number">1.</span> <span class="nav-text">Toeplitz Matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-1"><span class="nav-number">2.</span> <span class="nav-text">solution 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-idea-of-solving-the-problem"><span class="nav-number">2.1.</span> <span class="nav-text">The idea of solving the problem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-2"><span class="nav-number">3.</span> <span class="nav-text">solution 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-idea-of-solving-the-problem-1"><span class="nav-number">3.1.</span> <span class="nav-text">The idea of solving the problem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note"><span class="nav-number">4.</span> <span class="nav-text">note</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-中的enumerate"><span class="nav-number">4.1.</span> <span class="nav-text">Python 中的enumerate()</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -704,7 +703,24 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 
@@ -750,6 +766,8 @@
   
 
   
+  
+
 
   
 
