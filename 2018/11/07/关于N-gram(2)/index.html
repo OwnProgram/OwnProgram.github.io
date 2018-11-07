@@ -95,20 +95,26 @@
 
 
 
-<meta name="description" content="关于sequence to sequence模型Sequence to Sequence学习由论文Sequence to Sequence Learning with Neural Networks提出。   Our method uses a multilayered Long Short-Term Memory (LSTM) to map the input sequence to a vec">
+<meta name="description" content="自然语言处理(NLP)中的n-gram模型(二)n-gram的用途一、词性标注N-gram可以实现词性标注。例如“爱”这个词，它既可以作为动词使用，也可以作为名词使用。不失一般性，假设我们需要匹配一句话中“爱”的词性。我们可以将词性标注看成一个多分类问题，按照Bi-gram计算每一个词性概率：选取概率更大的词性（比如动词）作为这句话中“爱”字的词性。 二、分词器 在NLP中，分词的效果很大程度上影">
 <meta name="keywords" content="深度学习,机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于sequence to sequence模型">
-<meta property="og:url" content="http://yoursite.com/2018/10/31/关于sequence to sequence/index.html">
+<meta property="og:title" content="自然语言处理(NLP)中的n-gram模型(二)">
+<meta property="og:url" content="http://yoursite.com/2018/11/07/关于N-gram(2)/index.html">
 <meta property="og:site_name" content="程序猿的路">
-<meta property="og:description" content="关于sequence to sequence模型Sequence to Sequence学习由论文Sequence to Sequence Learning with Neural Networks提出。   Our method uses a multilayered Long Short-Term Memory (LSTM) to map the input sequence to a vec">
+<meta property="og:description" content="自然语言处理(NLP)中的n-gram模型(二)n-gram的用途一、词性标注N-gram可以实现词性标注。例如“爱”这个词，它既可以作为动词使用，也可以作为名词使用。不失一般性，假设我们需要匹配一句话中“爱”的词性。我们可以将词性标注看成一个多分类问题，按照Bi-gram计算每一个词性概率：选取概率更大的词性（比如动词）作为这句话中“爱”字的词性。 二、分词器 在NLP中，分词的效果很大程度上影">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/X0UI0og.png">
-<meta property="og:updated_time" content="2018-10-31T12:46:28.000Z">
+<meta property="og:image" content="https://i.imgur.com/f8hmr2f.png">
+<meta property="og:image" content="https://i.imgur.com/EhcnsU7.png">
+<meta property="og:image" content="https://i.imgur.com/Ned3Sce.png">
+<meta property="og:image" content="https://i.imgur.com/v8KquHB.png">
+<meta property="og:image" content="https://i.imgur.com/zhWiKmA.png">
+<meta property="og:image" content="https://i.imgur.com/5RocIZE.png">
+<meta property="og:image" content="https://i.imgur.com/pGdHmkt.png">
+<meta property="og:updated_time" content="2018-11-07T12:02:35.831Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于sequence to sequence模型">
-<meta name="twitter:description" content="关于sequence to sequence模型Sequence to Sequence学习由论文Sequence to Sequence Learning with Neural Networks提出。   Our method uses a multilayered Long Short-Term Memory (LSTM) to map the input sequence to a vec">
-<meta name="twitter:image" content="https://i.imgur.com/X0UI0og.png">
+<meta name="twitter:title" content="自然语言处理(NLP)中的n-gram模型(二)">
+<meta name="twitter:description" content="自然语言处理(NLP)中的n-gram模型(二)n-gram的用途一、词性标注N-gram可以实现词性标注。例如“爱”这个词，它既可以作为动词使用，也可以作为名词使用。不失一般性，假设我们需要匹配一句话中“爱”的词性。我们可以将词性标注看成一个多分类问题，按照Bi-gram计算每一个词性概率：选取概率更大的词性（比如动词）作为这句话中“爱”字的词性。 二、分词器 在NLP中，分词的效果很大程度上影">
+<meta name="twitter:image" content="https://i.imgur.com/f8hmr2f.png">
 
 
 
@@ -138,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/31/关于sequence to sequence/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/07/关于N-gram(2)/"/>
 
 
 
 
 
-  <title>关于sequence to sequence模型 | 程序猿的路</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>自然语言处理(NLP)中的n-gram模型(二) | 程序猿的路</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -271,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/31/关于sequence to sequence/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/关于N-gram(2)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶落满城">
@@ -288,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于sequence to sequence模型</h1>
+          <h1 class="post-title" itemprop="name headline">自然语言处理(NLP)中的n-gram模型(二)</h1>
         
 
         <div class="post-meta">
@@ -300,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-31T20:46:42+08:00">
-                2018-10-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-07T20:00:41+08:00">
+                2018-11-07
               </time>
             
 
@@ -360,27 +366,20 @@
       
 
       
-        <h2 id="关于sequence-to-sequence模型"><a href="#关于sequence-to-sequence模型" class="headerlink" title="关于sequence to sequence模型"></a>关于sequence to sequence模型</h2><p>Sequence to Sequence学习由论文<strong><em>Sequence to Sequence Learning with Neural Networks</em></strong>提出。</p>
-<blockquote>
-<p> Our method uses a multilayered Long Short-Term Memory (LSTM) to map the input sequence to a vector of a ﬁxed dimensionality, and then another deep LSTM to decode the target sequence from the vector.</p>
+        <h2 id="自然语言处理-NLP-中的n-gram模型-二"><a href="#自然语言处理-NLP-中的n-gram模型-二" class="headerlink" title="自然语言处理(NLP)中的n-gram模型(二)"></a>自然语言处理(NLP)中的n-gram模型(二)</h2><h3 id="n-gram的用途"><a href="#n-gram的用途" class="headerlink" title="n-gram的用途"></a>n-gram的用途</h3><h4 id="一、词性标注"><a href="#一、词性标注" class="headerlink" title="一、词性标注"></a>一、词性标注</h4><p>N-gram可以实现词性标注。例如“爱”这个词，它既可以作为动词使用，也可以作为名词使用。不失一般性，假设我们需要匹配一句话中“爱”的词性。<br><img src="https://i.imgur.com/f8hmr2f.png" alt=""><br>我们可以将词性标注看成一个多分类问题，按照Bi-gram计算每一个词性概率：<br><img src="https://i.imgur.com/EhcnsU7.png" alt=""><br>选取概率更大的词性（比如动词）作为这句话中“爱”字的词性。</p>
+<h4 id="二、分词器"><a href="#二、分词器" class="headerlink" title="二、分词器"></a>二、分词器</h4><p> 在NLP中，分词的效果很大程度上影响着模型的性能，因此分词甚至可以说是最重要的工程。用N-gram可以实现一个简单的分词器（Tokenizer）。同样地，将分词理解为多分类问题：X表示有待分词的句子YYi表示该句子的一个分词方案。<br><img src="https://i.imgur.com/Ned3Sce.png" alt=""><br>三个概率中，“我爱”可能在语料库中比较常见，因此p(爱|我)会比较大，然而“我爱深”这样的组合比较少见，于是p(爱深|我)和p(深|我爱)都比较小，导致P(Y3)比P(Y1)和P(Y2)都大，因此第三种分词方案最佳。</p>
+<h4 id="三、机器翻译"><a href="#三、机器翻译" class="headerlink" title="三、机器翻译"></a>三、机器翻译</h4><p>同一句话，可能有多种翻译方式，它们的区别仅在于单词的组合顺序，这时候使用N-gram分别计算各种情况的概率，选最大的那个即可。<br><img src="https://i.imgur.com/v8KquHB.png" alt=""></p>
+<h3 id="n-gram模型的一个常用应用"><a href="#n-gram模型的一个常用应用" class="headerlink" title="n-gram模型的一个常用应用"></a>n-gram模型的一个常用应用</h3><p>搜索引擎如谷歌或百度等，或者输入法的提示。当我们在搜索每一个或几个词时，搜索框通常会以下拉菜单的形式给出几个备选项：<br><img src="https://i.imgur.com/zhWiKmA.png" alt=""><br>那么原理是什么呢？也就是输入：“自然”的时候，后面的“博物馆”、“拼读法”……这些备选词是怎么出来的，又是怎么排序的呢？实际上是根据语言模型得出的，假如使用的是二元语言模型（Bigram）预测下一个单词：<br>P(“博物馆|“自然”)&gt;P(“拼读法”|“自然”)&gt;P(“拼读法教学视频”|“自然”)&gt;…………&gt;P(“人”|“自然”)，这些概率值的求法和上面提到的完全一样，数据的来源可以是用户搜索的log。</p>
+<h3 id="n-gram的进化版——NNLM-Neural-Network-based-Language-Model"><a href="#n-gram的进化版——NNLM-Neural-Network-based-Language-Model" class="headerlink" title="n-gram的进化版——NNLM(Neural Network based Language Model)"></a>n-gram的进化版——NNLM(Neural Network based Language Model)</h3><p>该模型由Bengio在2001年提出(论文：Bengio Y, Ducharme R, VincentP, et al. A neural probabilistic language model[J]. Journal of machine learning research, 2003, 3(Feb): 1137-1155.)，这是最经典的神经网络语言模型，后面的模型都是基于此进行改造的，Bengio提出了使用神经网络来训练语言模型方法，该语言模型是一个N-gram模型，即通过输入的n-1个单词，来预测第n个单词的概率分布。<br>Bengio使用了一个简单的三层神经网络：该模型网络结构如下图所示：<br><img src="https://i.imgur.com/5RocIZE.png" alt=""></p>
+<ul>
+<li>输入层：通过一个映射矩阵C（矩阵的规模为|V|*m，其中|V|是词表大小，m是词向量的维度），将前n-1个离散的单词映射成n-1个m维向量，也就是通过查表的方式将单词变成词向量。然后将这n-1个m维向量首尾相接形成一个m(n-1)的向量，该向量就是神经网络的输入向量x。</li>
+<li>隐藏层：隐藏层的节点个数为h，为了将输入层输出的m(n-1)维向量x转化为隐藏层（维度为h）的输入，在输入层和隐藏层之间需要一个参数矩阵H（H的规模为h*m(n-1)），同时需要一个偏置d，该变化可以表示为f(x)=Hx+ d，这是一个线性变换。隐藏层的输出需要将经过线性变换的向量在做一次非线性变换，在这里选择的函数为tanh（双曲正切），也就是激活函数。那么我们可以知道隐藏层的输出就是tanh（Hx+d）。</li>
+<li>输出层：从隐藏层到输出层的传递同样需要一个线性变换和一个非线性变化，即首先通过线性变换将隐藏层的输出向量的维数转化为和输出层的节点数一致（其实此时已经可以将这个这个值作为输出），但是为了将输出表示成概率分布的形式（每个维度上的值之和为1），我们还需要对输出层的输入（也就是隐藏层的输出）进行一个非线性变换，激活函数为softmax，才能达到我们想要的效果。由于我们希望网络的输出可以对第n个单词的分布做出概率预测，所以输出层的维度为|V|，即整个词表的大小，那么从隐藏层到输出层的参数矩阵U的规模就是|V|*h。<blockquote>
+<p>i&gt;如果输入层和输出层之间没有直连边，那么输出层的输入就是y=b+Utanh(Hx+d);<br>ii&gt;如果输入层和输出层之间有直连边，该变换同样需要一个参数矩阵W（W的规模为|V|*m(n-1)），和一个偏置b，那么输出层的输入就是y=b+Wx+Utanh(d+Hx).<br>最终输出层的输出就是经过softmax函数激活后的概率：<br><img src="https://i.imgur.com/pGdHmkt.png" alt=""><br>其中，分子就是词w(t)对应的输出，例如单词w(t)在词表的位置是第100个，那么分子就是输出向量的第100维上的值。<br>该神经网络的参数θ=(b, d, W, U, H, C)，而训练模型的方法是和随机梯度下降（SGD）类似的随机梯度上升（SGA）。</p>
 </blockquote>
-<p>这篇文章主要是提供了一种崭新的RNN Encoder-Decoder算法，并且将其应用于机器翻译中。抽象Encoder-Decoder框架如下图：</p>
-<p><img src="https://i.imgur.com/X0UI0og.png" alt=""></p>
-<p>所谓的RNN Encoder-Decoder结构，简单的来说就是算法包含两部分，一个负责对输入的信息进行Encoding(编码)，所谓编码，就是将输入序列转化成一个固定长度的向量，将输入转换为向量形式。然后由Decoder对这个向量进行解码，解码，就是将之前生成的固定向量再转化成输出序列。而RNN Encoder-Decoder结构就是编码器与解码器都是使用RNN算法，一般为LSTM或LSTM的变体（GRU）。LSTM的优势在于处理序列，它可以将上文包含的信息保存在隐藏状态中，这样就提高了算法对于上下文的理解能力。</p>
-<p>Encoder与Decoder各自可以算是单独的模型，一般是一层或多层的LSTM。</p>
-<p>Encoder-Decoder框架可以这么直观地去理解：可以把它看作适合处理由一个句子（或篇章）生成另外一个句子（或篇章）的通用处理模型。对于句子对<x,y>，我们的目标是给定输入句子X，期待通过Encoder-Decoder框架来生成目标句子Y。X和Y可以是同一种语言，也可以是两种不同的语言。</x,y></p>
-<blockquote>
-<p> Encoder对输入的句子进行编码，将输入的句子通过非线性变换转化为中间语义表示c；解码器Decoder根据句子的中间语义c和之前已经生成的历史输出信息y1,y2….yi-1来生成i时刻要生成的单词yi。每个yi都依次这样产生，那么看起来就是整个系统根据输入句子X生成了目标句子Y。</p>
-</blockquote>
-<h3 id="seq2seq的可能应用"><a href="#seq2seq的可能应用" class="headerlink" title="seq2seq的可能应用"></a>seq2seq的可能应用</h3><ul>
-<li>古诗生成，输入上句，输出下句</li>
-<li>对联生成 ，输入上联，输出下联</li>
-<li>对话机器人，输入用户对话，输出机器回答</li>
-<li>…</li>
+</li>
 </ul>
-<hr>
-<p>参考：<br><a href="https://blog.csdn.net/malefactor/article/details/51124732" target="_blank" rel="external">https://blog.csdn.net/malefactor/article/details/51124732</a></p>
-<p><a href="https://www.jianshu.com/p/9bf7178279dc" target="_blank" rel="external">https://www.jianshu.com/p/9bf7178279dc</a></p>
+<p>参考：<a href="https://blog.csdn.net/sinat_31188625/article/details/68067188" target="_blank" rel="external">https://blog.csdn.net/sinat_31188625/article/details/68067188</a><br>     <a href="https://blog.csdn.net/songbinxu/article/details/80209197" target="_blank" rel="external">https://blog.csdn.net/songbinxu/article/details/80209197</a><br>    <a href="https://blog.csdn.net/u010899985/article/details/79177053" target="_blank" rel="external">https://blog.csdn.net/u010899985/article/details/79177053</a></p>
 
       
     </div>
@@ -413,8 +412,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/31/关于注意力机制(2)/" rel="next" title="关于注意力机制（二）">
-                <i class="fa fa-chevron-left"></i> 关于注意力机制（二）
+              <a href="/2018/11/05/关于N-gram(1)/" rel="next" title="自然语言处理(NLP)中的n-gram模型(一)">
+                <i class="fa fa-chevron-left"></i> 自然语言处理(NLP)中的n-gram模型(一)
               </a>
             
           </div>
@@ -422,10 +421,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/31/关于RNN(1)/" rel="prev" title="关于循环神经网络（Recurrent Neural Network）（一）">
-                关于循环神经网络（Recurrent Neural Network）（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -570,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于sequence-to-sequence模型"><span class="nav-number">1.</span> <span class="nav-text">关于sequence to sequence模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#seq2seq的可能应用"><span class="nav-number">1.1.</span> <span class="nav-text">seq2seq的可能应用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#自然语言处理-NLP-中的n-gram模型-二"><span class="nav-number">1.</span> <span class="nav-text">自然语言处理(NLP)中的n-gram模型(二)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#n-gram的用途"><span class="nav-number">1.1.</span> <span class="nav-text">n-gram的用途</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、词性标注"><span class="nav-number">1.1.1.</span> <span class="nav-text">一、词性标注</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、分词器"><span class="nav-number">1.1.2.</span> <span class="nav-text">二、分词器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、机器翻译"><span class="nav-number">1.1.3.</span> <span class="nav-text">三、机器翻译</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n-gram模型的一个常用应用"><span class="nav-number">1.2.</span> <span class="nav-text">n-gram模型的一个常用应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n-gram的进化版——NNLM-Neural-Network-based-Language-Model"><span class="nav-number">1.3.</span> <span class="nav-text">n-gram的进化版——NNLM(Neural Network based Language Model)</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -709,7 +704,24 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 
@@ -755,43 +767,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
   
 
 
