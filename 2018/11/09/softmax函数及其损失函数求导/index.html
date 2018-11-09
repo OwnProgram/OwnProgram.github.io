@@ -95,25 +95,28 @@
 
 
 
-<meta name="description" content="自然语言处理(NLP)中的n-gram模型(一)n-gram语言模型：n-gram是一种基于统计语言模型的算法。它的基本思想是将文本里面的内容按照字节进行大小为n的滑动窗口操作，形成了长度是n 的字节片段序列。每一个字节片段称为gram,对所有gram的出现频度进行统计，并且按照事先设定好的阈值进行过滤，形成关键gram列表，也就是这个文本的向量特征空间，列表中的每一种gram就是一个特征向量维度">
+<meta name="description" content="softmaxsoftmax用于多分类任务中，它能将多个神经元的输出映射到（0,1）之间，可以理解为概率，从而进行多分类的预测。softmax函数： S_{i}=\frac{e^{i}}{\sum_{j}^{ }e^{j}}如图：  输入为z1=3,z2=1,z3=-3，经过softmax函数后，值映射到（0,1），这些值的累加和等于1，满足概率的性质。将其理解为概率，在最后选取输出结点时就可以选">
 <meta name="keywords" content="深度学习,机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自然语言处理(NLP)中的n-gram模型(一)">
-<meta property="og:url" content="http://yoursite.com/2018/11/05/关于N-gram(1)/index.html">
+<meta property="og:title" content="softmax函数及其损失函数求导">
+<meta property="og:url" content="http://yoursite.com/2018/11/09/softmax函数及其损失函数求导/index.html">
 <meta property="og:site_name" content="程序猿的路">
-<meta property="og:description" content="自然语言处理(NLP)中的n-gram模型(一)n-gram语言模型：n-gram是一种基于统计语言模型的算法。它的基本思想是将文本里面的内容按照字节进行大小为n的滑动窗口操作，形成了长度是n 的字节片段序列。每一个字节片段称为gram,对所有gram的出现频度进行统计，并且按照事先设定好的阈值进行过滤，形成关键gram列表，也就是这个文本的向量特征空间，列表中的每一种gram就是一个特征向量维度">
+<meta property="og:description" content="softmaxsoftmax用于多分类任务中，它能将多个神经元的输出映射到（0,1）之间，可以理解为概率，从而进行多分类的预测。softmax函数： S_{i}=\frac{e^{i}}{\sum_{j}^{ }e^{j}}如图：  输入为z1=3,z2=1,z3=-3，经过softmax函数后，值映射到（0,1），这些值的累加和等于1，满足概率的性质。将其理解为概率，在最后选取输出结点时就可以选">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/q4fD5pH.png">
-<meta property="og:image" content="https://i.imgur.com/ENPkESn.png">
-<meta property="og:image" content="https://i.imgur.com/jOhRvBW.png">
-<meta property="og:image" content="https://i.imgur.com/B2bQIqv.png">
-<meta property="og:image" content="https://i.imgur.com/5v8KClK.png">
-<meta property="og:image" content="https://i.imgur.com/96QdcA4.png">
-<meta property="og:updated_time" content="2018-11-07T11:58:27.533Z">
+<meta property="og:image" content="https://i.imgur.com/abKvBhj.png">
+<meta property="og:image" content="https://i.imgur.com/74RoffQ.png">
+<meta property="og:image" content="https://i.imgur.com/yTpPNz2.png">
+<meta property="og:image" content="https://i.imgur.com/yVAezce.png">
+<meta property="og:image" content="https://i.imgur.com/smS9RvJ.png">
+<meta property="og:image" content="https://i.imgur.com/MBBiri0.png">
+<meta property="og:image" content="https://i.imgur.com/NKHJtNt.png">
+<meta property="og:image" content="https://i.imgur.com/LS94doe.png">
+<meta property="og:image" content="https://i.imgur.com/fFe6bUr.png">
+<meta property="og:updated_time" content="2018-11-09T08:32:00.165Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自然语言处理(NLP)中的n-gram模型(一)">
-<meta name="twitter:description" content="自然语言处理(NLP)中的n-gram模型(一)n-gram语言模型：n-gram是一种基于统计语言模型的算法。它的基本思想是将文本里面的内容按照字节进行大小为n的滑动窗口操作，形成了长度是n 的字节片段序列。每一个字节片段称为gram,对所有gram的出现频度进行统计，并且按照事先设定好的阈值进行过滤，形成关键gram列表，也就是这个文本的向量特征空间，列表中的每一种gram就是一个特征向量维度">
-<meta name="twitter:image" content="https://i.imgur.com/q4fD5pH.png">
+<meta name="twitter:title" content="softmax函数及其损失函数求导">
+<meta name="twitter:description" content="softmaxsoftmax用于多分类任务中，它能将多个神经元的输出映射到（0,1）之间，可以理解为概率，从而进行多分类的预测。softmax函数： S_{i}=\frac{e^{i}}{\sum_{j}^{ }e^{j}}如图：  输入为z1=3,z2=1,z3=-3，经过softmax函数后，值映射到（0,1），这些值的累加和等于1，满足概率的性质。将其理解为概率，在最后选取输出结点时就可以选">
+<meta name="twitter:image" content="https://i.imgur.com/abKvBhj.png">
 
 
 
@@ -143,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/05/关于N-gram(1)/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/09/softmax函数及其损失函数求导/"/>
 
 
 
 
 
-  <title>自然语言处理(NLP)中的n-gram模型(一) | 程序猿的路</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>softmax函数及其损失函数求导 | 程序猿的路</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -276,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/关于N-gram(1)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/09/softmax函数及其损失函数求导/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶落满城">
@@ -293,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">自然语言处理(NLP)中的n-gram模型(一)</h1>
+          <h1 class="post-title" itemprop="name headline">softmax函数及其损失函数求导</h1>
         
 
         <div class="post-meta">
@@ -305,8 +308,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-05T21:04:34+08:00">
-                2018-11-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-09T16:32:10+08:00">
+                2018-11-09
               </time>
             
 
@@ -365,20 +368,23 @@
       
 
       
-        <h2 id="自然语言处理-NLP-中的n-gram模型-一"><a href="#自然语言处理-NLP-中的n-gram模型-一" class="headerlink" title="自然语言处理(NLP)中的n-gram模型(一)"></a>自然语言处理(NLP)中的n-gram模型(一)</h2><p>n-gram语言模型：n-gram是一种基于统计语言模型的算法。它的基本思想是将文本里面的内容按照字节进行大小为n的滑动窗口操作，形成了长度是n 的字节片段序列。每一个字节片段称为gram,对所有gram的出现频度进行统计，并且按照事先设定好的阈值进行过滤，形成关键gram列表，也就是这个文本的向量特征空间，列表中的每一种gram就是一个特征向量维度。</p>
-<h3 id="N-gram中的概率计算"><a href="#N-gram中的概率计算" class="headerlink" title="N-gram中的概率计算"></a>N-gram中的概率计算</h3><p>假设有一个n个此组成的句子S=（w1,w2,…，wn）,衡量它的概率：制造这种语言模型的原因是基于这么一种思想：在整个语言环境中，句子S的出现概率是由组成S的N个item的出现概率组成的:假设每一个单词wi都要依赖于从第一个单词w1到它的前一个单词wi-1的影响：<br><img src="https://i.imgur.com/q4fD5pH.png" alt=""><br>然而这个方法有两个缺点：</p>
-<ol>
-<li>参数空间过大</li>
-<li>数据稀疏严重（后面会提到）<br>为了解决第一个问题，引入马尔科夫假设（Markov Assumption），该假设认为，一个词的出现仅仅依赖于它前面出现的几个词。这就大大简化了上述公式。<br><img src="https://i.imgur.com/ENPkESn.png" alt=""><blockquote>
-<p>如果一个词的出现仅依赖于它前面出现的一个词，那么我们就称之为 Bi-gram。<br>如果一个词的出现仅依赖于它前面出现的两个词，那么我们就称之为 Tri-gram。<br>举个栗子：将“informationretrieval”视为一段文本，它的5-grams的items依次为：infor,nform,forma,ormat,rmati,matio,ation,tion,ionr,onre,nret,retr,retri,etrie,triev,rieva,ieval<br>再举个中文栗子：“你今天休假了吗”，它的bigram（N=2）依次为：你今，今天，天休，休假，假了，了吗。<br>N-gram的N可以取很高，然而现实中一般 bi-gram 和 tri-gram 就够用了。<br>那么，如何计算其中的每一项条件概率呢？答案是极大似然估计（Maximum Likelihood Estimation，MLE），说人话就是数频数：<br><img src="https://i.imgur.com/jOhRvBW.png" alt=""></p>
-</blockquote>
-</li>
-</ol>
-<h3 id="举栗子时间"><a href="#举栗子时间" class="headerlink" title="举栗子时间"></a>举栗子时间</h3><p>以Bi-gram为例，有一个三句话的语料库：<br><img src="https://i.imgur.com/B2bQIqv.png" alt=""><br>可以统计到，“I”出现了3次，“I am”出现了2次，于是：P（am|I）=2/3。<br>同理可以得到：P（I|[s]）=2/6=0.67,P（Sam|am）=0.5,P（[s]|Sam）=0.5,P（do|I）=0.33，P（not|do）=1,P（like|not）=1。<br>以上为每一项条件概率计算的具体方式。接下来提供一个《Language Modeling with Ngrams》中的例子，Jurafsky et al., 1994 从加州一个餐厅的数据库中做了一些统计：<br><img src="https://i.imgur.com/5v8KClK.png" alt=""><br><img src="https://i.imgur.com/96QdcA4.png" alt=""><br>另统计到，P（I|[s]）=0.25，P（[s]|food）=0.68。我们计算P（[s]|I want chinese food[s]）。</p>
+        <h3 id="softmax"><a href="#softmax" class="headerlink" title="softmax"></a>softmax</h3><p>softmax用于多分类任务中，它能将多个神经元的输出映射到（0,1）之间，可以理解为概率，从而进行多分类的预测。<br>softmax函数：</p>
+<script type="math/tex; mode=display">S_{i}=\frac{e^{i}}{\sum_{j}^{ }e^{j}}</script><p>如图：<br><img src="https://i.imgur.com/abKvBhj.png" alt=""></p>
 <blockquote>
-<p>P（[s]|I want chinese food[s]）=P（I|[s]）xP（want|I）xP（chinese|want）xP（food|chinese）xP（[s]|food）=0.25x(827/2533)x(6/927)x(82/158)x0.68=0.0001896</p>
+<p>输入为z1=3,z2=1,z3=-3，经过softmax函数后，值映射到（0,1），这些值的累加和等于1，满足概率的性质。将其理解为概率，在最后选取输出结点时就可以选择概率最大（即值最大）的结点作为预测值。</p>
 </blockquote>
-<p>我们算出了“I want chinese food”这句话的概率，但有时候这句话会很长，那么概率（都是小于1的常数）的相乘很可能造成数据下溢（downflow），即很多个小于1的常数相乘会约等于0，此时可以使用log概率解决。<br>摘自：<a href="https://blog.csdn.net/songbinxu/article/details/80209197" target="_blank" rel="external">https://blog.csdn.net/songbinxu/article/details/80209197</a><br><a href="https://www.cnblogs.com/cdsj/p/5720391.html" target="_blank" rel="external">https://www.cnblogs.com/cdsj/p/5720391.html</a></p>
+<h3 id="用到的损失函数"><a href="#用到的损失函数" class="headerlink" title="用到的损失函数"></a>用到的损失函数</h3><p>经过softmax分类后结果通过损失函数来进行评测是否准确，如果不准确需要通过误差进行梯度下降对神经网络的权重参数进行更新，这个时候我们就要求Loss对每个权重矩阵的偏导，然后应用链式法则。那么这个过程的第一步，就是对softmax求导传回去。</p>
+<p>损失函数有很多种，这里使用交叉熵函数（原因是求导结果比较简单，易于计算，并且交叉熵解决某些损失函数学习缓慢的问题）：<script type="math/tex">C=-\sum_{i}^{ }y_{i}lna_{i}</script></p>
+<p>其中，yi表示真实值，ai就是softmax求出的值。i表示输出节点的标号。如下栗子中,i可以取值为4,5,6：</p>
+<p><img src="https://i.imgur.com/74RoffQ.png" alt=""><br>由该网络得到：<br>z4 = w41<em>o1+w42</em>o2+w43<em>o3，<br>z5 = w51</em>o1+w52<em>o2+w53</em>o3，<br>z6 = w61<em>o1+w62</em>o2+w63*o3，<br>z4,z5,z6分别代表结点4,5,6的输出，01,02,03代表是结点1,2,3往后传的输入.</p>
+<h3 id="做一手准备"><a href="#做一手准备" class="headerlink" title="做一手准备"></a>做一手准备</h3><p>各种求导公式：<br><img src="https://i.imgur.com/yTpPNz2.png" alt=""><br><img src="https://i.imgur.com/yVAezce.png" alt=""><br><img src="https://i.imgur.com/smS9RvJ.png" alt=""></p>
+<h3 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h3><p>权重参数在上述栗子中分别有w41,w42,w43,w51,w52,w53,w61,w62,w63这些，如果要求w41,w42,w43的偏导，就需要将Loss函数求偏导传到结点4，然后再利用链式法则继续求导即可，举个例子此时求w41的偏导为:<br><img src="https://i.imgur.com/MBBiri0.png" alt=""><br>w51…..w63等参数的偏导同理可以求出，那么我们的关键就在于Loss函数对于结点4,5,6的偏导怎么求，即C对zi求偏导。根据复合函数求导法则：<br><img src="https://i.imgur.com/NKHJtNt.png" alt=""></p>
+<blockquote>
+<p>值得注意的是，这里为什么是aj而不是ai，这里要看一下softmax的公式了，因为softmax公式的特性，它的分母包含了所有神经元的输出，所以，对于不等于i的其他输出里面，也包含着zi所有的a都要纳入到计算范围中。计算的时候也分为i=j和i!=j的情况。</p>
+</blockquote>
+<p>分步来推导：<br><img src="https://i.imgur.com/LS94doe.png" alt=""><br>然后分情况推导：<br><img src="https://i.imgur.com/fFe6bUr.png" alt=""></p>
+<h3 id="举例说明为什么计算方便"><a href="#举例说明为什么计算方便" class="headerlink" title="举例说明为什么计算方便"></a>举例说明为什么计算方便</h3><p>假设通过若干层的计算，最后得到的某个训练样本的向量的分数是[ 2, 3, 4 ],那么经过softmax函数作用后概率分别就是=[e^2/(e^2+e^3+e^4),e^3/(e^2+e^3+e^4),e^4/(e^2+e^3+e^4)] = [0.0903,0.2447,0.665],如果这个样本正确的分类是第二个的话，此时y2=1，那么计算出来的偏导就是[0.0903,0.2447-1,0.665]=[0.0903,-0.7553,0.665]，然后再根据这个进行back propagation就可以了。</p>
+<p>参考：<a href="https://www.jianshu.com/p/ffa51250ba2e" target="_blank" rel="external">https://www.jianshu.com/p/ffa51250ba2e</a><br><a href="https://blog.csdn.net/qian99/article/details/78046329" target="_blank" rel="external">https://blog.csdn.net/qian99/article/details/78046329</a><br><a href="https://www.cnblogs.com/alexanderkun/p/8098781.html" target="_blank" rel="external">https://www.cnblogs.com/alexanderkun/p/8098781.html</a></p>
 
       
     </div>
@@ -411,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/02/关于CNN(1)/" rel="next" title="关于卷积神经网络（一）">
-                <i class="fa fa-chevron-left"></i> 关于卷积神经网络（一）
+              <a href="/2018/11/07/关于N-gram(2)/" rel="next" title="自然语言处理(NLP)中的n-gram模型(二)">
+                <i class="fa fa-chevron-left"></i> 自然语言处理(NLP)中的n-gram模型(二)
               </a>
             
           </div>
@@ -420,10 +426,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/07/关于N-gram(2)/" rel="prev" title="自然语言处理(NLP)中的n-gram模型(二)">
-                自然语言处理(NLP)中的n-gram模型(二) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -568,7 +570,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#自然语言处理-NLP-中的n-gram模型-一"><span class="nav-number">1.</span> <span class="nav-text">自然语言处理(NLP)中的n-gram模型(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#N-gram中的概率计算"><span class="nav-number">1.1.</span> <span class="nav-text">N-gram中的概率计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举栗子时间"><span class="nav-number">1.2.</span> <span class="nav-text">举栗子时间</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#softmax"><span class="nav-number">1.</span> <span class="nav-text">softmax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用到的损失函数"><span class="nav-number">2.</span> <span class="nav-text">用到的损失函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#做一手准备"><span class="nav-number">3.</span> <span class="nav-text">做一手准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求导"><span class="nav-number">4.</span> <span class="nav-text">求导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例说明为什么计算方便"><span class="nav-number">5.</span> <span class="nav-text">举例说明为什么计算方便</span></a></li></ol></div>
             
 
           </div>
