@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Leetcode,算法," />
+  <meta name="keywords" content="技术,乱七八糟的问题," />
 
 
 
@@ -95,18 +95,23 @@
 
 
 
-<meta name="description" content="Judge Route Circlenitially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.The move sequence is">
-<meta name="keywords" content="Leetcode,算法">
+<meta name="description" content="学习需求，需要在笔记本上装ubuntu16.04，本来并不难，只要根据网上教程一步一步走基本没有问题，然而，我手中的笔记本是联想拯救者R720（GTX1050TI,i5-7300hq版本），且买来后并没有重装windows10系统。在装双系统的过程中遇到一些坑，用了一下午来填起这些坑，在此记录下（即UEFI+GPT安装ubuntu）。 step 1在官网下载ubuntu16.04版本（64bit）">
+<meta name="keywords" content="技术,乱七八糟的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Judge Route Circle">
-<meta property="og:url" content="http://yoursite.com/2018/03/30/Judge_Route_Circle/index.html">
+<meta property="og:title" content="安装Windows+Ubuntu16.04填坑">
+<meta property="og:url" content="http://yoursite.com/2018/11/13/安装windows10+ubuntu16.04填坑/index.html">
 <meta property="og:site_name" content="程序猿的路">
-<meta property="og:description" content="Judge Route Circlenitially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.The move sequence is">
+<meta property="og:description" content="学习需求，需要在笔记本上装ubuntu16.04，本来并不难，只要根据网上教程一步一步走基本没有问题，然而，我手中的笔记本是联想拯救者R720（GTX1050TI,i5-7300hq版本），且买来后并没有重装windows10系统。在装双系统的过程中遇到一些坑，用了一下午来填起这些坑，在此记录下（即UEFI+GPT安装ubuntu）。 step 1在官网下载ubuntu16.04版本（64bit）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-30T04:41:35.352Z">
+<meta property="og:image" content="https://i.imgur.com/c6GKbVe.png">
+<meta property="og:image" content="https://i.imgur.com/sJ1iTfg.png">
+<meta property="og:image" content="https://i.imgur.com/qieG8t0.png">
+<meta property="og:image" content="https://i.imgur.com/P0EEiiJ.png">
+<meta property="og:updated_time" content="2018-11-13T06:45:32.425Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Judge Route Circle">
-<meta name="twitter:description" content="Judge Route Circlenitially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.The move sequence is">
+<meta name="twitter:title" content="安装Windows+Ubuntu16.04填坑">
+<meta name="twitter:description" content="学习需求，需要在笔记本上装ubuntu16.04，本来并不难，只要根据网上教程一步一步走基本没有问题，然而，我手中的笔记本是联想拯救者R720（GTX1050TI,i5-7300hq版本），且买来后并没有重装windows10系统。在装双系统的过程中遇到一些坑，用了一下午来填起这些坑，在此记录下（即UEFI+GPT安装ubuntu）。 step 1在官网下载ubuntu16.04版本（64bit）">
+<meta name="twitter:image" content="https://i.imgur.com/c6GKbVe.png">
 
 
 
@@ -136,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/30/Judge_Route_Circle/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/13/安装windows10+ubuntu16.04填坑/"/>
 
 
 
 
 
-  <title>Judge Route Circle | 程序猿的路</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>安装Windows+Ubuntu16.04填坑 | 程序猿的路</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -269,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/30/Judge_Route_Circle/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/13/安装windows10+ubuntu16.04填坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶落满城">
@@ -286,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Judge Route Circle</h1>
+          <h1 class="post-title" itemprop="name headline">安装Windows+Ubuntu16.04填坑</h1>
         
 
         <div class="post-meta">
@@ -298,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-30T12:29:26+08:00">
-                2018-03-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-13T14:42:49+08:00">
+                2018-11-13
               </time>
             
 
@@ -358,9 +363,22 @@
       
 
       
-        <h2 id="Judge-Route-Circle"><a href="#Judge-Route-Circle" class="headerlink" title="Judge Route Circle"></a>Judge Route Circle</h2><p>nitially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.<br>The move sequence is represented by a string. And each move is represent by a character. The valid robot moves are R (Right), L (Left), U (Up) and D (down). The output should be true or false representing whether the robot makes a circle.<br>Example 1:<br>Input:’UD’<br>Output:’true’<br>Example 2:<br>Input:’LL’<br>Output:’false’</p>
-<h2 id="method-1"><a href="#method-1" class="headerlink" title="method 1"></a>method 1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">s=[<span class="string">'U'</span>,<span class="string">'U'</span>,<span class="string">'R'</span>,<span class="string">'D'</span>,<span class="string">'D'</span>,<span class="string">'L'</span>]</div><div class="line"><span class="keyword">if</span> s.count(<span class="string">'U'</span>) == s.count(<span class="string">'D'</span>) <span class="keyword">and</span> s.count(<span class="string">'R'</span>) == s.count(<span class="string">'L'</span>):</div><div class="line">    print(<span class="string">'true'</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">'false'</span>)</div></pre></td></tr></table></figure>
-<h2 id="method"><a href="#method" class="headerlink" title="method"></a>method</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">s=[<span class="string">'U'</span>,<span class="string">'U'</span>,<span class="string">'R'</span>,<span class="string">'D'</span>,<span class="string">'D'</span>,<span class="string">'L'</span>]</div><div class="line">x=y=<span class="number">0</span></div><div class="line"><span class="keyword">for</span> foot <span class="keyword">in</span> s:</div><div class="line">    <span class="keyword">if</span> foot==<span class="string">'U'</span>: y+=<span class="number">1</span></div><div class="line">    <span class="keyword">elif</span> foot==<span class="string">'D'</span>: y+=<span class="number">-1</span></div><div class="line">    <span class="keyword">elif</span> foot==<span class="string">'R'</span>: x+=<span class="number">1</span></div><div class="line">    <span class="keyword">elif</span> foot==<span class="string">'L'</span>: x+=<span class="number">-1</span></div><div class="line"><span class="keyword">if</span> x==y==<span class="number">0</span>:</div><div class="line">    print(<span class="string">'ture'</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">'false'</span>)</div></pre></td></tr></table></figure>
+        <p>学习需求，需要在笔记本上装ubuntu16.04，本来并不难，只要根据网上教程一步一步走基本没有问题，然而，我手中的笔记本是联想拯救者R720（GTX1050TI,i5-7300hq版本），且买来后并没有重装windows10系统。在装双系统的过程中遇到一些坑，用了一下午来填起这些坑，在此记录下（即UEFI+GPT安装ubuntu）。</p>
+<h3 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h3><p>在官网下载ubuntu16.04版本（64bit）的iso文件。</p>
+<h3 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h3><p>我使用U盘装系统，所以使用U盘启动盘制作工具（例如Ultralso,rufus等）。以Ultralso为例，打开后选择“继续试用”，在“文件”中打开下载好的ISO文件，选定自己的U盘（大于2G），在“启动”中选择写入硬盘镜像，随后弹出窗口，确认写入方式为“USB HDD”或者“USB HDD+”。等待系统写入完成。</p>
+<h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3"></a>step 3</h3><p>通过磁盘管理压缩卷，腾出安装ubuntu的空间。</p>
+<h3 id="step-4"><a href="#step-4" class="headerlink" title="step 4"></a>step 4</h3><p>在电源选项中关闭快速启动。具体操作教程很多。</p>
+<h3 id="step-5"><a href="#step-5" class="headerlink" title="step 5"></a>step 5</h3><p>重启，按F2进入BIOS，将security boot改为disable。进入configuration，ATA Controller Mode设置为ACHI模式。（坑：否则在ubuntu安装过程中无法读取硬盘）。同时确认Boot Mode为UEFI。</p>
+<h3 id="step6"><a href="#step6" class="headerlink" title="step6"></a>step6</h3><p>将U盘插入，重启，狂按F12，在boot menu中选择U盘启动。（带USB的）</p>
+<h3 id="step7"><a href="#step7" class="headerlink" title="step7"></a>step7</h3><p>选择语言地区等后，安装类型选择“其他选项”。<br>进入ubuntu分区，UEFI+GPT与Legacy+MBR不同的是不用挂载在/boot下，而是选择EFI。<br>分区如下：</p>
+<ol>
+<li>EFI系统分区，主分区，空间起始位置，512M，最好不要太小。</li>
+<li>交换空间（swap）,根据内存大小设置，网上大多建议大小为二倍内存，我的笔记本是8g内存，所以交换空间设为16g。</li>
+<li>挂载点：/（根目录），EXT4日志文件系统，空间起始位置，分配剩余全部空间。</li>
+<li>（坑），下方安装启动引导器的设备，选择刚建立的EFI系统分区的位置，我在第一次装的时候建立了/boot，把引导器安装到这里，造成在安装grub2时失败并直接导致安装程序崩溃。</li>
+<li>继续安装等待等待等待。。。。。<h3 id="step-8"><a href="#step-8" class="headerlink" title="step 8"></a>step 8</h3>正常情况下ubuntu会安装成功，可以使用ubuntu操作系统了。此时重启，会发现进入ubuntu的引导，有ubuntu和windows选项，然而！然而！（坑），选择windows后会发现根本启动不了，因为此前把configuration中ATA Controller Mode设置为ACHI模式，要使用windows，需要将ACHI模式再改回去，然而，改回去以后会发现ubuntu又不能用了。这个时候需要反复多次在ubuntu的引导下选择windows，在我选择了3次以后，会出现“正在修复”的字样，不要慌，等几秒后，会出现蓝屏界面：<br><img src="https://i.imgur.com/c6GKbVe.png" alt=""><br>依次选择：疑难解答——高级选项——启动设置，会出现：<br><img src="https://i.imgur.com/sJ1iTfg.png" alt=""><br>这时候再次重启，就可以看到很多特殊启动项了：<br><img src="https://i.imgur.com/qieG8t0.png" alt=""><br>按对应模式的数字以启动，选择“启用安全模式”或者“启用带网络连接的安全模式”，就进入到windows安全模式：<br><img src="https://i.imgur.com/P0EEiiJ.png" alt=""><br>到这一步后，什么也不需要做，直接重启电脑，再次在引导中选择windows后，发现已经可以正常使用了！（遇到改ACHI后不能启动，只要进入一次安全模式就可以自动修复！）<h3 id="step-9"><a href="#step-9" class="headerlink" title="step 9"></a>step 9</h3>这时每次启动默认都是启动ubuntu，需要选择才能进入windows，若想默认启动window，进入BIOS，在boot的efi下会看到两个操作系统，ubuntu在第一个，把windows调成第一位即可。以后若要进入ubuntu，需要开机按F12手动选择。</li>
+</ol>
+
       
     </div>
     
@@ -377,9 +395,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+            <a href="/tags/技术/" rel="tag"># 技术</a>
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/乱七八糟的问题/" rel="tag"># 乱七八糟的问题</a>
           
         </div>
       
@@ -392,8 +410,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/30/tow_sum/" rel="next" title="TOW_SUM">
-                <i class="fa fa-chevron-left"></i> TOW_SUM
+              <a href="/2018/11/09/softmax函数及其损失函数求导/" rel="next" title="softmax函数及其损失函数求导">
+                <i class="fa fa-chevron-left"></i> softmax函数及其损失函数求导
               </a>
             
           </div>
@@ -401,10 +419,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/30/Unique_Morse_Code_Words/" rel="prev" title="Unique Morse Code Words">
-                Unique Morse Code Words <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -549,7 +563,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Judge-Route-Circle"><span class="nav-number">1.</span> <span class="nav-text">Judge Route Circle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#method-1"><span class="nav-number">2.</span> <span class="nav-text">method 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#method"><span class="nav-number">3.</span> <span class="nav-text">method</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#step-1"><span class="nav-number">1.</span> <span class="nav-text">step 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-2"><span class="nav-number">2.</span> <span class="nav-text">step 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-3"><span class="nav-number">3.</span> <span class="nav-text">step 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-4"><span class="nav-number">4.</span> <span class="nav-text">step 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-5"><span class="nav-number">5.</span> <span class="nav-text">step 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step6"><span class="nav-number">6.</span> <span class="nav-text">step6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step7"><span class="nav-number">7.</span> <span class="nav-text">step7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-8"><span class="nav-number">8.</span> <span class="nav-text">step 8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-9"><span class="nav-number">9.</span> <span class="nav-text">step 9</span></a></li></ol></div>
             
 
           </div>
