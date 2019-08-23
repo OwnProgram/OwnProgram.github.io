@@ -103,12 +103,12 @@
 <meta property="og:site_name" content="程序猿的路">
 <meta property="og:description" content="二叉树的镜像操作给定的二叉树，将其变换为源二叉树的镜像。  思路遍历二叉树，将每个节点的左右孩子互换即可。（递归） solution1234567891011121314151617class TreeNode:     def __init__(self, x):         self.val = x         self.left = None         self.right =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="c:/Users/fei/Pictures/mirror_terr.PNG">
+<meta property="og:image" content="http://yoursite.com/.com//Users/fei/Pictures/mirror_terr.PNG">
 <meta property="og:updated_time" content="2019-08-19T11:54:38.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二叉树的镜像">
 <meta name="twitter:description" content="二叉树的镜像操作给定的二叉树，将其变换为源二叉树的镜像。  思路遍历二叉树，将每个节点的左右孩子互换即可。（递归） solution1234567891011121314151617class TreeNode:     def __init__(self, x):         self.val = x         self.left = None         self.right =">
-<meta name="twitter:image" content="c:/Users/fei/Pictures/mirror_terr.PNG">
+<meta name="twitter:image" content="http://yoursite.com/.com//Users/fei/Pictures/mirror_terr.PNG">
 
 
 
@@ -361,7 +361,7 @@
 
       
         <h1 id="二叉树的镜像"><a href="#二叉树的镜像" class="headerlink" title="二叉树的镜像"></a>二叉树的镜像</h1><p>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
-<p><img src="C:\Users\fei\Pictures\mirror_terr.PNG" alt=""></p>
+<p><img src="/.com//Users\fei\Pictures\mirror_terr.PNG" alt=""></p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>遍历二叉树，将每个节点的左右孩子互换即可。（递归）</p>
 <h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></div><div class="line">     <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></div><div class="line">         self.val = x</div><div class="line">         self.left = <span class="keyword">None</span></div><div class="line">         self.right = <span class="keyword">None</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="comment"># 返回镜像树的根节点</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Mirror</span><span class="params">(self, root)</span>:</span></div><div class="line">        <span class="comment"># write code here</span></div><div class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span>  <span class="keyword">None</span></div><div class="line">        root.left,root.right = root.right,root.left</div><div class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">            self.Mirror(root.left)</div><div class="line">        <span class="keyword">if</span> root.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">            self.Mirror(root.right)</div><div class="line">        <span class="keyword">return</span> root.val</div></pre></td></tr></table></figure>
 
