@@ -103,14 +103,14 @@
 <meta property="og:site_name" content="程序猿的路">
 <meta property="og:description" content="复杂链表的复制输入一个复杂链表（每个节点中有节点值，以及两个指针，一个指向下一个节点，另一个特殊指针指向任意一个节点），返回结果为复制后复杂链表的head。（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空） 思路step1 :复制原链表的每个节点Node，每个Node’ 在每个Node之后，并顺序连接形成新的链表。  step2 :遵照原节点的random指向，完成各个复制节">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/OwnProgram/web_picture/raw/master/copy-link1.PNG">
+<meta property="og:image" content="https://github.com/OwnProgram/web_picture/raw/master/copy-link2.PNG">
 <meta property="og:image" content="https://github.com/OwnProgram/web_picture/raw/master/copy-link.PNG">
-<meta property="og:image" content="http://yoursite.com/.com//images/copy-link2.PNG">
-<meta property="og:image" content="http://yoursite.com/.com//images/copy-link.PNG">
-<meta property="og:updated_time" content="2019-08-23T08:08:09.862Z">
+<meta property="og:updated_time" content="2019-08-23T08:18:35.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="复杂链表的复制">
 <meta name="twitter:description" content="复杂链表的复制输入一个复杂链表（每个节点中有节点值，以及两个指针，一个指向下一个节点，另一个特殊指针指向任意一个节点），返回结果为复制后复杂链表的head。（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空） 思路step1 :复制原链表的每个节点Node，每个Node’ 在每个Node之后，并顺序连接形成新的链表。  step2 :遵照原节点的random指向，完成各个复制节">
-<meta name="twitter:image" content="https://github.com/OwnProgram/web_picture/raw/master/copy-link.PNG">
+<meta name="twitter:image" content="https://github.com/OwnProgram/web_picture/raw/master/copy-link1.PNG">
 
 
 
@@ -364,11 +364,11 @@
       
         <h1 id="复杂链表的复制"><a href="#复杂链表的复制" class="headerlink" title="复杂链表的复制"></a>复杂链表的复制</h1><p>输入一个复杂链表（每个节点中有节点值，以及两个指针，一个指向下一个节点，另一个特殊指针指向任意一个节点），返回结果为复制后复杂链表的head。（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空）</p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>step1 :复制原链表的每个节点Node，每个Node’ 在每个Node之后，并顺序连接形成新的链表。</p>
-<p><img src="https://github.com/OwnProgram/web_picture/raw/master/copy-link.PNG" alt=""></p>
+<p><img src="https://github.com/OwnProgram/web_picture/raw/master/copy-link1.PNG" alt=""></p>
 <p>step2 :遵照原节点的random指向，完成各个复制节点对应的random。</p>
-<p><img src="/.com//images\copy-link2.PNG" alt="copy-link2"></p>
+<p><img src="https://github.com/OwnProgram/web_picture/raw/master/copy-link2.PNG" alt=""></p>
 <p>step3 :将复制好的链表拆分出来，偶数位的节点组成的链表就是最终复制得到的链表。</p>
-<p><img src="/.com//images\copy-link.PNG" alt="copy-link"></p>
+<p><img src="https://github.com/OwnProgram/web_picture/raw/master/copy-link.PNG" alt=""></p>
 <h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">RandomListNode</span>:</span></div><div class="line">     <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></div><div class="line">         self.label = x</div><div class="line">         self.next = <span class="keyword">None</span></div><div class="line">         self.random = <span class="keyword">None</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="comment"># 返回 RandomListNode</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Clone</span><span class="params">(self, pHead)</span>:</span></div><div class="line">        <span class="comment"># write code here</span></div><div class="line">        <span class="keyword">if</span> pHead == <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">        <span class="comment"># step1</span></div><div class="line">        pNode = pHead</div><div class="line">        <span class="keyword">while</span> pNode:</div><div class="line">            pClone = RandomListNode(pNode.label)</div><div class="line">            pClone.next = pNode.next</div><div class="line">            pNode.next = pClone</div><div class="line">            pNode = pClone.next</div><div class="line">        <span class="comment"># step2</span></div><div class="line">        pNode = pHead</div><div class="line">        <span class="keyword">while</span> pNode:</div><div class="line">            pClone = pNode.next</div><div class="line">            <span class="keyword">if</span> pNode.random:</div><div class="line">                pClone.random = pNode.random.next</div><div class="line">            pNode = pClone.next</div><div class="line">        <span class="comment"># step3</span></div><div class="line">        pCur, pCopy = pHead, pHead.next</div><div class="line">        <span class="keyword">while</span> pCur:</div><div class="line">            pClone = pCur.next</div><div class="line">            pCur.next = pClone.next</div><div class="line">            <span class="keyword">if</span> pCur.next:</div><div class="line">                pClone.next = pCur.next.next</div><div class="line">            pCur = pCur.next</div><div class="line">        <span class="keyword">return</span> pCopy</div></pre></td></tr></table></figure>
 <h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ol>
 <li><a href="https://www.cnblogs.com/tianqizhi/p/9769529.html" target="_blank" rel="external">https://www.cnblogs.com/tianqizhi/p/9769529.html</a></li>
@@ -415,10 +415,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/23/demo/" rel="prev" title="demo">
-                demo <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -498,7 +494,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-count">61</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
